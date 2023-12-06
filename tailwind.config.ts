@@ -18,7 +18,8 @@ const config: Config = {
   colors:{
 dark:"#1B1B1D",
 light:"#F8F8F8",
-blue:'#015EA7'
+blue:'#015EA7',
+yellow:"#FFB62B"
   }
     },
   },

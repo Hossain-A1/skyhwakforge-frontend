@@ -51,7 +51,7 @@ const Hero = () => {
                   href=''
                   className={cn(
                     buttonVariants({ variant: "secondary" }),
-                    "text-sm"
+                    "text-sm "
                   )}
                 >
                   Explore ⊳⊳⊳
@@ -60,7 +60,7 @@ const Hero = () => {
                   href=''
                   className={cn(
                     buttonVariants({ variant: "outline" }),
-                    "text-sm"
+                    "text-sm eq"
                   )}
                 >
                   Buy Now $$

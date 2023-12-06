@@ -6,6 +6,9 @@
 .sp{
   @apply py-20
 }
+.eq {
+  transition: 500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
 /* typhography */
 
 h1{

@@ -1,6 +1,6 @@
 import Drones from "@/components/Drones"
 
-const Drone = () => {
+const DronePage:React.FC = () =>  {
   return (
     <main>
       <Drones/>
@@ -8,4 +8,4 @@ const Drone = () => {
   )
 }
 
-export default Drone
+export default DronePage

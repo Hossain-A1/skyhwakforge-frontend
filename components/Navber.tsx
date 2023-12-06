@@ -10,7 +10,7 @@ const Navber = () => {
   const navContents = [
     { href: "/", label: "home" },
     { href: "/about-us", label: "about" },
-    { href: "/drones", label: "drones" },
+    { href: "/drones-page", label: "drones" },
     { href: "/galleries", label: "galleries" },
     { href: "/offers", label: "offers" },
     { href: "/support", label: "support" },
