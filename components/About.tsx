@@ -1,25 +1,23 @@
 import Image from "next/image";
+import SectionTitle from "./shared/SectionTitle";
 
 const About = () => {
   return (
-    <section className='container sp mt-20'>
+    <section className='container  mt-40'>
       <div className='flex flex-col gap-10'>
-        <div className='top-side flex flex-col gap-5 items-center'>
-          <strong className='text-blue'>Why choose us?</strong>
-          <h2 className='font-semibold text-4xl w-3/5 text-center'>
-            {" "}
-            Our Team is Composed of Trained and Certified Drone Pilots
-          </h2>
-          <p className='hover:text-light/70 eq '>
-            SkyHawkForge: Pioneering the Horizon. At SkyHawkForge, we are more
+        <div className='top-side'>
+          <SectionTitle
+            title='Why choose us?'
+            headline='Our Team is Composed of Trained and Certified Drone Pilots'
+            desc='SkyHawkForge: Pioneering the Horizon. At SkyHawkForge, we are more
             than just creators; we are architects of possibility. Our about page
             unveils the essence of our journey—where technological ingenuity
             meets boundless ambition. Explore the roots of our passion, the
             expertise that propels us forward, and the commitment to shaping the
             future of aerial exploration. Join us in the story of SkyHawkForge,
             where every innovation takes flight and every endeavor is a
-            testament to the limitless potential of the skies we navigate.
-          </p>
+            testament to the limitless potential of the skies we navigate.'
+          />
         </div>
 
         <div className='grid grid-cols-2  gap-10'>
@@ -38,10 +36,14 @@ const About = () => {
 
             <div className='flex items-center gap-5'>
               <div className='h-[8rem] w-[8rem] shadow-sm shadow-blue flex items-center justify-center'>
-                <span className="text-2xl text-light/70 font-bold uppercase text-center">22K+ sold</span>
+                <span className='text-2xl text-light/70 font-bold uppercase text-center'>
+                  22K+ sold
+                </span>
               </div>
               <div className='h-[8rem] w-[8rem] shadow-sm shadow-blue flex items-center justify-center'>
-                <span className="text-2xl text-light/70 font-bold uppercase text-center">4.7K stocks</span>
+                <span className='text-2xl text-light/70 font-bold uppercase text-center'>
+                  4.7K stocks
+                </span>
               </div>
               <div className='h-[8rem] w-[8rem] shadow-sm shadow-blue flex items-center justify-center'>
                 <span>8K+ sold</span>

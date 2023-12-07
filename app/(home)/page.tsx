@@ -1,4 +1,5 @@
 import About from "@/components/About"
+import Drones from "@/components/Drones"
 import Hero from "@/components/Hero"
 
 const HomePage = () => {
@@ -6,6 +7,7 @@ const HomePage = () => {
     <main>
       <Hero/>
       <About/>
+      <Drones/>
     </main>
   )
 }

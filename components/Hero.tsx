@@ -36,7 +36,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className='  hero-para space-y-10  '>
+            <div className='  hero-para space-y-10'>
               <div className=''>
                 <h1 className='leading-[1.1]'>Explore the Skies with Our Drones</h1>
               </div>

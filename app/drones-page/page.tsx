@@ -3,7 +3,7 @@ import Drones from "@/components/Drones"
 const DronePage:React.FC = () =>  {
   return (
     <main>
-      <Drones/>
+      <Drones native/>
     </main>
   )
 }
