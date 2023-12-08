@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Navber from '@/components/Navber'
 import { cn } from '@/libs/utils'
+import { Toaster } from 'react-hot-toast'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(inter.className, 'bg-dark text-light')}>
+        <Toaster/>
         <Navber/>
         {children}</body>
     </html>

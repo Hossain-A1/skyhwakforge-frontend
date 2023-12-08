@@ -17,9 +17,7 @@ interface DronesPops {
 }
 const Drones: React.FC<DronesPops> = ({ native }) => {
   const { data: drones, isLoading, error } = useFetch("/api/drones");
-  if (drones) {
-    console.log(drones);
-  }
+ 
   return (
     <section className='container sp mt-20 space-y-5'>
       <SectionTitle
