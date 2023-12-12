@@ -18,3 +18,14 @@ h1{
 p{
   @apply text-left text-light/50 w-4/5
 }
+
+/* table */
+ tr {
+  border: 1px solid #dddddd; /* Border for table cells */
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+gap: 40px;
+}

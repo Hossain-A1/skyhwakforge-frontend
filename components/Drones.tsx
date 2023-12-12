@@ -6,7 +6,7 @@ import React from "react";
 import { CurrencyFormatter } from "./shared/CurrencyFormatter";
 import Review from "./shared/Review";
 import Link from "next/link";
-import { cn } from "@/libs/utils";
+import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/Button";
 import SectionTitle from "./shared/SectionTitle";
 import Loading from "./ui/Loading";
@@ -17,7 +17,7 @@ interface DronesPops {
 }
 const Drones: React.FC<DronesPops> = ({ native }) => {
   const { data: drones, isLoading, error } = useFetch("/api/drones");
- 
+
   return (
     <section className='container sp mt-20 space-y-5'>
       <SectionTitle

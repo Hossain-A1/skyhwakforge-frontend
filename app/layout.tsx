@@ -1,28 +1,32 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import Navber from '@/components/Navber'
-import { cn } from '@/libs/utils'
-import { Toaster } from 'react-hot-toast'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Navber from "@/components/Navber";
+import { cn } from "@/lib/utils";
+import { Toaster } from "react-hot-toast";
+import ReduxProvider from "@/provider/ReduxProvider";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'SkyHawkForce | Home',
-  description: 'SkyHawkForce a E-commerce Drone store.',
-}
+  title: "SkyHawkForce | Home",
+  description: "SkyHawkForce a E-commerce Drone store.",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={cn(inter.className, 'bg-dark text-light')}>
-        <Toaster/>
-        <Navber/>
-        {children}</body>
+    <html lang='en'>
+      <body className={cn(inter.className, "bg-dark text-light")}>
+        <ReduxProvider>
+          <Toaster />
+          <Navber />
+          {children}
+        </ReduxProvider>
+      </body>
     </html>
-  )
+  );
 }

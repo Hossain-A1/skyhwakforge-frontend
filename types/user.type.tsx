@@ -5,7 +5,7 @@ export type userType = {
   name: string;
   email: string;
   password: string;
-  picUrl: string;
+  picUrl?: string;
   address?: string;
   phoneNumber?: string;
   role: 'user' | 'admin';

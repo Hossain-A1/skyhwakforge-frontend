@@ -3,7 +3,7 @@ import Link from "next/link";
 import { GiDeliveryDrone } from "react-icons/gi";
 import { buttonVariants } from "./ui/Button";
 import { usePathname } from "next/navigation";
-import { cn } from "@/libs/utils";
+import { cn } from "@/lib/utils";
 const Navber = () => {
   const pathName = usePathname();
 

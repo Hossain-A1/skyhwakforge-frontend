@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Overlay from "./Overlay";
 import Link from "next/link";
-import { cn } from "@/libs/utils";
+import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/Button";
 
 const Hero = () => {
@@ -38,13 +38,15 @@ const Hero = () => {
 
             <div className='  hero-para space-y-10'>
               <div className=''>
-                <h1 className='leading-[1.1]'>Explore the Skies with Our Drones</h1>
+                <h1 className='leading-[1.1]'>
+                  Explore the Skies with Our Drones
+                </h1>
               </div>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. In qui
-                voluptate doloribus ullam blanditiis est iusto quasi ratione
-                iste voluptas labore veritatis officiis, voluptatem incidunt
-                earum amet sunt,
+                "Discover a digital sanctuary at SkyHawkForge, where dreams take
+                flight and ideas soar beyond the ordinary. Nourish your mind
+                with a tapestry of curated wonders, from visionary artworks to
+                narratives that dance on the edge of reality."
               </p>
               <div className='flex items-center gap-5 '>
                 <Link
