@@ -50,7 +50,7 @@ const Hero = () => {
               </p>
               <div className='flex items-center gap-5 '>
                 <Link
-                  href=''
+                  href='/drones-page'
                   className={cn(
                     buttonVariants({ variant: "secondary" }),
                     "text-sm "
@@ -59,7 +59,7 @@ const Hero = () => {
                   Explore ⊳⊳⊳
                 </Link>
                 <Link
-                  href=''
+                  href='/offers'
                   className={cn(
                     buttonVariants({ variant: "outline" }),
                     "text-sm eq"

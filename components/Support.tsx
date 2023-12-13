@@ -16,7 +16,7 @@ const Support = () => {
                 type='text'
                 id='name'
                 placeholder='Inter your name'
-                className='px-4 py-2 outline-none bg-transparent border focus:border-blue rounded-md eq'
+                className='px-5 py-3 outline-none bg-transparent border focus:border-blue rounded-xl eq'
               />
             </div>
             <div className='flex flex-col gap-2.5  w-full'>
@@ -26,7 +26,7 @@ const Support = () => {
                 type='email'
                 id='email'
                 placeholder='Inter your email'
-                className='px-4 py-2 outline-none bg-transparent border focus:border-blue rounded-md eq'
+                className='px-5 py-3 outline-none bg-transparent border focus:border-blue rounded-xl eq'
               />
             </div>
             <div className='flex flex-col gap-2.5  w-full'>
@@ -36,7 +36,7 @@ const Support = () => {
                 type='password'
                 id='password'
                 placeholder='Inter your password'
-                className='px-4 py-2 outline-none bg-transparent border focus:border-blue rounded-md eq'
+                className='px-5 py-3 outline-none bg-transparent border focus:border-blue rounded-xl eq'
               />
             </div>
             <div className=''>

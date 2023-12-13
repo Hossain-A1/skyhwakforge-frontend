@@ -49,7 +49,8 @@ const SignInForm = () => {
   );
 
   return (
-    <div className='flex flex-col gap-10'>
+   <div className="w-2/5">
+     <div className='w-full flex flex-col gap-10'>
       <div className='flex flex-col gap-1.5'>
         <h2 className="text-3xl">Welcome back!</h2>
         <p className='text-light/50'>Please login to your account</p>
@@ -103,6 +104,7 @@ const SignInForm = () => {
         </p>
       </form>
     </div>
+   </div>
   );
 };
 

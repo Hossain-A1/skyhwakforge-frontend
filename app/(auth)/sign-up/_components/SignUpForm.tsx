@@ -53,7 +53,8 @@ const SignUpForm = () => {
   );
 
   return (
-    <div className='flex flex-col gap-10'>
+    <div className="w-2/5">
+      <div className='flex flex-col gap-10 w-full'>
       <div className='flex flex-col gap-1.5'>
         <h2 className='text-3xl '>Create an account</h2>
         <p className='text-light/50'>Please provide your details to register</p>
@@ -119,6 +120,7 @@ const SignUpForm = () => {
           </Link>
         </p>
       </form>
+    </div>
     </div>
   );
 };
