@@ -22,9 +22,9 @@ const Hero = () => {
         {/* contens */}
 
         <div className='absolute z-[102] h-full w-full'>
-          <div className=' grid grid-cols-2 items-center h-full w-full '>
+          <div className=' grid lg:grid-cols-2 grid-cols-1 items-center h-full w-full '>
             <div className='  flex justify-center items-center'>
-              <div className='drone-image lg:h-[28rem] lg:w-[28rem] max-2xl::h-[38rem] max-2xl:w-[38rem] flex flex-col items-center  '>
+              <div className='drone-image max-lg:h-[20rem] max-lg:w-[20rem] lg:h-[28rem] lg:w-[28rem] max-2xl:h-[38rem] max-2xl:w-[38rem] flex flex-col items-center  '>
                 <Image
                   src='/images/hero-drone.png'
                   alt='hero-drone'
@@ -36,13 +36,13 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className='  hero-para space-y-10'>
+            <div className='  hero-para flex flex-col gap-10 items-center'>
               <div className=''>
                 <h1 className='leading-[1.1]'>
                   Explore the Skies with Our Drones
                 </h1>
               </div>
-              <p>
+              <p className="max-lg:hidden">
                 "Discover a digital sanctuary at SkyHawkForge, where dreams take
                 flight and ideas soar beyond the ordinary. Nourish your mind
                 with a tapestry of curated wonders, from visionary artworks to

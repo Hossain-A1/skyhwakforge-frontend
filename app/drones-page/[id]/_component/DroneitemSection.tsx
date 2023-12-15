@@ -78,7 +78,7 @@ const DroneitemSection: React.FC<DroneDetailsPageProps> = ({ item }) => {
             </h2>
 
             <del className='text-sm font-medium'>
-              {<CurrencyFormatter amount={((item.price / 2) * 5) / 2} />}
+              <CurrencyFormatter amount={((item.price / 2) * 5) / 2} />
             </del>
             <span className='text-2xl font-bold'>
               {<CurrencyFormatter amount={item.price} />}

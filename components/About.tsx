@@ -3,7 +3,7 @@ import SectionTitle from "./shared/SectionTitle";
 
 const About = () => {
   return (
-    <section className='container  mt-40'>
+    <section className='container h-full w-full  mt-40'>
       <div className='flex flex-col gap-10'>
         <div className='top-side'>
           <SectionTitle
@@ -20,8 +20,8 @@ const About = () => {
           />
         </div>
 
-        <div className='grid grid-cols-2  gap-10'>
-          <div className='left-side flex flex-col items-center gap-5'>
+        <div className='grid lg:grid-cols-2 grid-cols-1  gap-10'>
+          <div className='left-side flex flex-col items-center gap-5 w-full'>
             <h2 className='font-semibold text-2xl '>Mission and Value:</h2>
             <p>
               SkyHawkForge: Elevating possibilities in the skies. Our mission is
@@ -34,27 +34,27 @@ const About = () => {
               creatively.
             </p>
 
-            <div className='flex items-center gap-5'>
-              <div className='h-[8rem] w-[8rem] shadow-sm shadow-blue flex items-center justify-center'>
-                <span className='text-2xl text-light/70 font-bold uppercase text-center'>
+            <div className='lg:flex max-lg:flex-col items-center   gap-5'>
+              <div className=' p-5  shadow-sm shadow-blue flex items-center justify-center h-full w-full'>
+                <span className='lg:text-2xl max-lg:text-sm text-light/70 font-bold uppercase text-center'>
                   22K+ sold
                 </span>
               </div>
-              <div className='h-[8rem] w-[8rem] shadow-sm shadow-blue flex items-center justify-center'>
-                <span className='text-2xl text-light/70 font-bold uppercase text-center'>
+              <div className='p-5 shadow-sm shadow-blue flex items-center justify-center h-full w-full'>
+                <span className='lg:text-2xl max-lg:text-sm text-light/70 font-bold uppercase text-center'>
                   4.7K stocks
                 </span>
               </div>
-              <div className='h-[8rem] w-[8rem] shadow-sm shadow-blue flex items-center justify-center'>
-                <span>8K+ sold</span>
+              <div className='p-5 shadow-sm shadow-blue flex items-center justify-center h-full w-full'>
+                <span className='lg:text-2xl max-lg:text-sm text-light/70 font-bold uppercase text-center '>8.4K+ sold</span>
               </div>
-              <div className='h-[8rem] w-[8rem] shadow-sm shadow-blue flex items-center justify-center'>
-                <span>8K+ sold</span>
+              <div className='p-5 shadow-sm shadow-blue flex items-center justify-center h-full w-full'>
+                <span className='lg:text-2xl max-lg:text-sm text-light/70 font-bold uppercase text-center '>8K+ sold</span>
               </div>
             </div>
           </div>
-          <div className=' right-side flex justify-between'>
-            <div className='about-drone-image lg:h-[20rem] lg:w-[20rem] max-2xl::h-[30rem] max-2xl:w-[30rem] flex flex-col items-center  '>
+          <div className=' right-side lg:flex max-lg:flex-col justify-between '>
+            <div className='about-drone-image max-lg:h-full max-lg:w-[90vw] lg:h-[20rem] lg:w-[20rem] max-2xl::h-[30rem] max-2xl:w-[30rem] flex flex-col items-center  '>
               <Image
                 src='/images/about-drone.png'
                 alt='hero-drone'
@@ -65,7 +65,7 @@ const About = () => {
               />
             </div>
 
-            <div className='bg-blue/20 w-[20rem] h-[20rem] rounded-r-full rounded-t-full flex flex-col gap-5 justify-center items-center'>
+            <div className='bg-blue/20 lg:w-[20rem] lg:h-[20rem] max-lg:w-[16rem] max-lg:h-[16rem] rounded-r-full rounded-t-full flex flex-col gap-5 justify-center items-center'>
               <h3 className='text-sm text-light/40 capitalize underline underline-offset-2'>
                 camera features
               </h3>

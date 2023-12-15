@@ -7,7 +7,7 @@ interface LoadingProps{
 
 const Loading:React.FC<LoadingProps > = ({isLoading}) => {
   return (
-    <div className='flex justify-center items-center'>
+    <div className='flex justify-center items-center '>
       <MoonLoader
       color='rgb(0, 145, 181)'
       loading={isLoading}

@@ -27,17 +27,17 @@ const Drones: React.FC<DronesPops> = ({ native }) => {
 
       {isLoading && <Loading isLoading={isLoading} />}
       {error && <Error error={error.message} />}
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10  '>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10  '>
         {drones &&
           drones.map((droneObj: droneType) => (
             <div
               key={droneObj._id}
-              className=' flex flex-wrap items-center justify-center shadow-sm shadow-light rounded-xl hover:scale-105 eq'
+              className=' flex flex-wrap items-center justify-center shadow-sm shadow-light rounded-xl hover:scale-105 eq overflow-hidden'
             >
               <div className=' h-[28rem] w-[24rem]  flex flex-col items-center gap-5 '>
                 <Link
                   href={`/drones-page/${droneObj._id}`}
-                  className='h-[18rem] w-full '
+                  className='h-[18rem] w-full block overflow-hidden'
                 >
                   <Image
                     height={1280}
@@ -59,6 +59,11 @@ const Drones: React.FC<DronesPops> = ({ native }) => {
                   <div className='flex justify-between items-center'>
                     <strong className='text-light text-xl font-bold'>
                       <CurrencyFormatter amount={droneObj.price} />
+                      <del className='text-sm font-medium relative -top-5'>
+                        <CurrencyFormatter
+                          amount={((droneObj.price / 2) * 5) / 2}
+                        />
+                      </del>
                     </strong>
 
                     <Link

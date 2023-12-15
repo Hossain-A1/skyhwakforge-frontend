@@ -1,11 +1,13 @@
 "use client";
 import { useState } from "react";
 import Button from "./ui/Button";
+import SectionTitle from "./shared/SectionTitle";
 
 const Support = () => {
   const [loading, setLoading] = useState<boolean>(false);
   return (
     <main className='sp container mt-10 '>
+          <SectionTitle title="support" headline='We are ready to help you any moments.'/>
       <section className='grid lg:grid-cols-2 grid-cols-1 gap-5'>
         <div className='flex flex-col items-center h-full w-full'>
           <form className='h-full w-[20rem] xl:w-[24rem] space-y-5'>
@@ -51,11 +53,18 @@ const Support = () => {
             </div>
           </form>
         </div>
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-          delectus doloremque tenetur repellat cum laudantium doloribus,
-          pariatur laborum dignissimos iste amet aliquid maiores odit reiciendis
-          at perspiciatis, ab a voluptatem.
+        <div className="space-y-5">
+          <h2 className="text-2xl font-semibold">Our supports informations are given bellow.</h2>
+         <div className="flex flex-col gap-5">
+          <h2 className="text-xl font-semibold">Call us: <span className="text-lg font-medium">+0373038373</span></h2>
+          <span className="text-lg font-medium">skywhakforge@help.net</span>
+          <span className="text-lg font-medium">droneterm@help.net</span>
+         </div>
+
+         {/* trainers gose here */}
+
+         <div></div>
+         
         </div>
       </section>
     </main>

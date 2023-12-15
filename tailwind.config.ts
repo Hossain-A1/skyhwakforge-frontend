@@ -11,7 +11,7 @@ const config: Config = {
       center:true,
       padding:{
         default:'1rem',
-        "sm":"0"
+        "sm":"0rem"
       }
     },
     extend: {
