@@ -17,4 +17,5 @@ export type droneType= {
   createdAt:string;
   updatedAt:string;
   __v:number
-}
+  count:number
+} 

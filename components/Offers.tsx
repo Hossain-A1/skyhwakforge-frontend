@@ -15,6 +15,9 @@ import Loading from "./ui/Loading";
 import Error from "./ui/Error";
 import { CurrencyFormatter } from "./shared/CurrencyFormatter";
 import Review from "./shared/Review";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "./ui/Button";
 
 const Offers = () => {
   const { data: offers, isLoading, error } = useFetch("/api/drones");
@@ -27,11 +30,16 @@ const Offers = () => {
       {error && <Error error={error.message} />}
       <div className=''>
         <Swiper
+          pagination={{
+            clickable: true,
+          }}
           loop={true}
           speed={700}
           grabCursor={true}
-          autoplay={true}
-          pagination={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
           modules={[Pagination, Autoplay]}
           className='mySwiper h-[20rem] w-full'
         >
@@ -77,6 +85,61 @@ const Offers = () => {
               </SwiperSlide>
             ))}
         </Swiper>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10  '>
+        {offers &&
+          offers.map((droneObj: droneType) => (
+            <div
+              key={droneObj._id}
+              className=' flex flex-wrap items-center justify-center shadow-sm shadow-light rounded-xl hover:scale-105 eq overflow-hidden'
+            >
+              <div className=' h-[28rem] w-[24rem]  flex flex-col items-center gap-5 '>
+                <Link
+                  href={`/drones-page/${droneObj._id}`}
+                  className='h-[18rem] w-full block overflow-hidden'
+                >
+                  <Image
+                    height={1280}
+                    width={720}
+                    src={droneObj.images[0]}
+                    alt={droneObj.title}
+                    priority
+                    className='h-full w-full object-cover '
+                  />
+                </Link>
+                <div className='h-[8rem] w-full px-5 space-y-3'>
+                  <h2 className='text-light'>{droneObj.title}</h2>
+                  <div className='flex gap-2 items-center border-b border-spacing-y-10'>
+                    <span className='text-light'>{droneObj.rating}</span>
+                    <Review rate={droneObj} />
+                    <span className='text-light'>(343)</span>
+                  </div>
+
+                  <div className='flex justify-between items-center'>
+                    <strong className='text-light text-xl font-bold'>
+                      <CurrencyFormatter amount={droneObj.price} />
+                      <del className='text-sm font-medium relative -top-5'>
+                        <CurrencyFormatter
+                          amount={((droneObj.price / 2) * 5) / 2}
+                        />
+                      </del>
+                    </strong>
+
+                    <Link
+                      href={`/drones-page/${droneObj._id}`}
+                      className={cn(
+                        buttonVariants({ variant: "outline" }),
+                        "font-semibold"
+                      )}
+                    >
+                      View details
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+      </div>
       </div>
     </section>
   );

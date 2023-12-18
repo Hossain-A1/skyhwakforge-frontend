@@ -6,7 +6,7 @@ import SectionTitle from "./shared/SectionTitle";
 const Support = () => {
   const [loading, setLoading] = useState<boolean>(false);
   return (
-    <main className='sp container mt-10 '>
+    <main className='sp container mt-10 space-y-5'>
           <SectionTitle title="support" headline='We are ready to help you any moments.'/>
       <section className='grid lg:grid-cols-2 grid-cols-1 gap-5'>
         <div className='flex flex-col items-center h-full w-full'>

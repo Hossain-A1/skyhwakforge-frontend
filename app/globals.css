@@ -32,8 +32,12 @@ tr {
 
 /* responsive  navigation*/
 .nav-tab {
-  @apply   max-lg:w-full max-lg:h-full max-lg:absolute max-lg:top-0 max-lg:bottom-0 max-lg:right-0 max-lg:left-0 max-lg:bg-blue max-lg:flex max-lg:justify-center max-lg:items-center max-lg:flex-col max-lg:opacity-0 max-lg:invisible max-lg:translate-x-0 origin-top h-full;
+  @apply flex justify-between items-center gap-10;
 }
+.nav-tab {
+  @apply   max-lg:w-full max-lg:h-full max-lg:absolute max-lg:top-[15rem] max-lg:bottom-0 max-lg:right-0 max-lg:left-0 max-lg:bg-blue max-lg:flex max-lg:justify-center max-lg:items-center max-lg:flex-col max-lg:opacity-0 max-lg:invisible max-lg:translate-x-0 origin-top h-full;
+}
+
 .active .nav-tab {
   @apply max-lg:fixed  max-lg:visible max-lg:opacity-100  max-lg:z-[9999]   h-full;
 }
@@ -57,10 +61,23 @@ tr {
 }
 
 .swiper-pagination-bullet {
-  background-color: #1fb2a6 !important;
+  background-color: #edf7f7 !important;
+  padding: 10px  !important;
+  cursor: pointer !important;
+
 }
 
 .swiper-pagination-bullet-active {
   background-color: blue !important;
-  cursor: pointer !important;
+}
+
+
+/* model-items style*/
+.item-model{
+  @apply flex justify-between p-5 border gap-10 whitespace-normal
+}
+
+strong{
+  font-size: medium;
+  color: rgb(164, 164, 166);
 }

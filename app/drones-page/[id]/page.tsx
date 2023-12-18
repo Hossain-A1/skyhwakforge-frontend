@@ -4,7 +4,7 @@ import Error from "@/components/ui/Error";
 import Loading from "@/components/ui/Loading";
 import useFetch from "@/hooks/useFetch";
 import { useRouter } from "next/navigation";
-import DroneitemSection from "./_component/DroneitemSection";
+import DroneitemSection from "./_component/DroneItemSection";
 
 const DroneDetailsPage = ({ params }: { params: { id: string } }) => {
   const {

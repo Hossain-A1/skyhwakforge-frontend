@@ -3,10 +3,12 @@ import { CurrencyFormatter } from "@/components/shared/CurrencyFormatter";
 import Review from "@/components/shared/Review";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import { addToCart } from "@/redux/features/drones/CartSlice";
 import { droneType } from "@/types/drone.type";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 interface DroneDetailsPageProps {
   item: droneType;
@@ -17,10 +19,18 @@ const DroneitemSection: React.FC<DroneDetailsPageProps> = ({ item }) => {
   const [seeMore, setSeeMore] = useState<boolean>(false);
   const [count, setCount] = useState<number>(1);
 
+  const dispatch = useDispatch();
+  console.log(dispatch);
+
   const increaseCount = () => {
     // Use the functional form of setCount to access the previous value
-    setCount(prevCount => prevCount + 1);
+    setCount((prevCount) => prevCount + 1);
   };
+  const decreaseCount = () => {
+    // Use the functional form of setCount to access the previous value
+    setCount((prevCount) => prevCount - 1);
+  };
+
   return (
     <section className='space-y-10'>
       <div className=' grid lg:grid-cols-2 grid-cols-1 gap-5'>
@@ -86,17 +96,30 @@ const DroneitemSection: React.FC<DroneDetailsPageProps> = ({ item }) => {
 
             <div className='cart w-full h-full flex gap-5 items-center'>
               <div className='flex items-center gap-5 bg-light/70 border px-6 py-2 rounded-md'>
-                <button className='text-2xl font-semibold text-dark' onClick={increaseCount}>-</button>
-                <strong className='text-2xl font-semibold text-dark'>{count}</strong>
-                <button className='text-2xl font-semibold text-dark' onClick={increaseCount}>+</button>
+                <button
+                  className='text-2xl font-semibold text-dark'
+                  onClick={decreaseCount}
+                >
+                  -
+                </button>
+                <strong className='text-2xl font-semibold text-dark'>
+                  {count}
+                </strong>
+                <button
+                  className='text-2xl font-semibold text-dark'
+                  onClick={increaseCount}
+                >
+                  +
+                </button>
               </div>
               <div className='w-4/5'>
                 <Link
-                  href={""}
+                  href={"/cart"}
                   className={cn(
                     buttonVariants({ variant: "secondary", size: "full" }),
                     "text-center w-full"
                   )}
+                  onClick={() => dispatch(addToCart({ ...item, count }))}
                 >
                   Add to Cart
                 </Link>
@@ -115,48 +138,50 @@ const DroneitemSection: React.FC<DroneDetailsPageProps> = ({ item }) => {
           <span className='text-xl text-light/70'>{item.about}</span>
         </div>
         <div className='space-y-5'>
-          <table className='w-full border-light border border-collapse '>
-            <thead className='border-blue border-4'>
-              <tr>
-                <th className='text-4xl font-semibold p-1 text-center'>
-                  Product specifications
-                </th>
-              </tr>
-            </thead>
-            <tbody className=''>
-              <tr className=''>
-                <td className="text-lg font-semibold">Package Dimensions L x W x H</td>
-                <td>24 x 19.7 x 13.6 centimetres</td>
-              </tr>
-              <tr className=' '>
-                <td className="text-lg font-semibold">Package Dimensions L x W x H</td>
-                <td>14.7 x 9.4 x 6.4 centimetres</td>
-              </tr>
-              <tr className=' '>
-                <td className="text-lg font-semibold">Brand</td>
-                <td>DJI</td>
-              </tr>
-              <tr className=' '>
-                <td className="text-lg font-semibold">Color</td>
-                <td>Light Gray</td>
-              </tr>
+          <div className='w-full border-light border border-collapse '>
+            <h2 className='text-4xl font-semibold p-1 text-center'>
+              Product specifications
+            </h2>
+            <div className=''>
+              <div className='item-model'>
+                <h3 className='text-lg font-semibold'>
+                  Package Dimensions L x W x H
+                </h3>
+                <strong>24 x 19.7 x 13.6 centimetres</strong>
+              </div>
+              <div className='item-model '>
+                <h3 className='text-lg font-semibold'>
+                  Package Dimensions L x W x H
+                </h3>
+                <strong>14.7 x 9.4 x 6.4 centimetres</strong>
+              </div>
+              <div className=' item-model'>
+                <h3 className='text-lg font-semibold'>Brand</h3>
+                <strong>DJI</strong>
+              </div>
+              <div className=' item-model'>
+                <h3 className='text-lg font-semibold'>Color</h3>
+                <strong>Light Gray</strong>
+              </div>
 
-              <tr
+              <div
                 onClick={() => setSeeMore(!seeMore)}
-                className='text-blue shadow-2xl font-semibold'
+                className='text-blue shadow-2xl font-semibold cursor-pointer'
               >
                 {!seeMore ? "See More.... " : "See Less"}
-              </tr>
+              </div>
 
               {
                 <aside className={seeMore ? "block" : "hidden"}>
-                  <tr className=''>
-                    <td className="text-lg font-semibold">Max Focal Length</td>
-                    <td>30 Millimetres</td>
-                  </tr>
-                  <tr className=''>
-                    <td className="text-lg font-semibold">Included components</td>
-                    <td>
+                  <div className='item-model'>
+                    <h3 className='text-lg font-semibold'>Max Focal Length</h3>
+                    <strong>30 Millimetres</strong>
+                  </div>
+                  <div className='item-model'>
+                    <h3 className='text-lg font-semibold'>
+                      Included components
+                    </h3>
+                    <strong>
                       DJI RC 2 x 1, DJI Mini 4 Pro/Mini 3 Series Two-Way
                       Charging Hub x 1, USB-C Cable x 1, DJI Mini 4 Pro
                       Intelligent Flight Battery x 3, DJI Mini Shoulder Bag x 1,
@@ -164,40 +189,46 @@ const DroneitemSection: React.FC<DroneDetailsPageProps> = ({ item }) => {
                       Spare Propellers (Pair) x 3, Spare Screws x 18, Type-C to
                       Type-C PD Cable x 1, DJI Mini 4 Pro Propeller Holder x 1,
                       Screwdriver x 1
-                    </td>
-                  </tr>
-                  <tr className=''>
-                    <td className="text-lg font-semibold">Has image stabilisation</td>
-                    <td>YES</td>
-                  </tr>
-                  <tr className=''>
-                    <td className="text-lg font-semibold">Style</td>
-                    <td>DJI Mini 4 Pro Fly More Combo RC2</td>
-                  </tr>
-                  <tr className=''>
-                    <td className="text-lg font-semibold">Part number</td>
-                    <td>CP.MA.00000735.02</td>
-                  </tr>
-                  <tr className=''>
-                    <td className="text-lg font-semibold">Effective still resolution</td>
-                    <td>48 MP</td>
-                  </tr>
-                  <tr className=''>
-                    <td className="text-lg font-semibold">Package Weight</td>
-                    <td>1.56 Kilograms</td>
-                  </tr>
-                  <tr className=''>
-                    <td className="text-lg font-semibold">Item Weight</td>
-                    <td>0.82 Kilograms</td>
-                  </tr>
-                  <tr className=''>
-                    <td className="text-lg font-semibold">Warranty description</td>
-                    <td>DJI</td>
-                  </tr>
+                    </strong>
+                  </div>
+                  <div className='item-model'>
+                    <h3 className='text-lg font-semibold'>
+                      Has image stabilisation
+                    </h3>
+                    <strong>YES</strong>
+                  </div>
+                  <div className='item-model'>
+                    <h3 className='text-lg font-semibold'>Style</h3>
+                    <strong>DJI Mini 4 Pro Fly More Combo RC2</strong>
+                  </div>
+                  <div className='item-model'>
+                    <h3 className='text-lg font-semibold'>Part number</h3>
+                    <strong>CP.MA.00000735.02</strong>
+                  </div>
+                  <div className='item-model'>
+                    <h3 className='text-lg font-semibold'>
+                      Effective still resolution
+                    </h3>
+                    <strong>48 MP</strong>
+                  </div>
+                  <div className='item-model'>
+                    <h3 className='text-lg font-semibold'>Package Weight</h3>
+                    <strong>1.56 Kilograms</strong>
+                  </div>
+                  <div className='item-model'>
+                    <h3 className='text-lg font-semibold'>Item Weight</h3>
+                    <strong>0.82 Kilograms</strong>
+                  </div>
+                  <div className='item-model'>
+                    <h3 className='text-lg font-semibold'>
+                      Warranty description
+                    </h3>
+                    <strong>DJI</strong>
+                  </div>
                 </aside>
               }
-            </tbody>
-          </table>
+            </div>
+          </div>
         </div>
       </div>
     </section>

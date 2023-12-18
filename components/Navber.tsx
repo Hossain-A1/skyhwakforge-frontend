@@ -20,17 +20,18 @@ const Navber = () => {
   ];
 
   return (
-    <header className='h-20 flex items-center fixed top-0 left-0 right-0 z-[9999] bg-dark'>
-      <nav className='container flex justify-between items-center h-full relative'>
+    <header className='h-20 flex items-center fixed top-0 left-0 right-0 z-[999] bg-dark'>
+      <nav className='container flex justify-between items-center  '>
         <div>
           <h2 className='text-blue  font-semibold'>SkyHawkForge</h2>
         </div>
 
-        <div className="">
-          <ul className='nav-tab flex max-lg:flex-col items-center gap-10 justify-center max-lg:bg-blue max-lg:h-full max-lg:w-full'>
+        <div className='h-[100vh]'>
+          <ul className=' nav-tab '>
             {navContents.map((item) => (
               <li key={item.label} className='uppercase text-sm'>
                 <Link
+                  onClick={() => setNavModal(false)}
                   href={item.href}
                   className={
                     pathName === item.href
@@ -46,16 +47,12 @@ const Navber = () => {
         </div>
 
         <div className='flex items-center gap-5'>
-          <span className='flex items-center'>
+          <Link href='/cart' className='flex items-center'>
             <GiDeliveryDrone className='text-2xl text-blue' />
             <h3>(12)</h3>
-          </span>
+          </Link>
 
-          <div
-            className={
-              navModal ? "navber active lg:hidden" : "navber lg:hidden"
-            }
-          >
+          <div className={navModal ? "navber active" : "navber lg:hidden"}>
             {/* mobile responsive */}
             <div className='mobile-navber-btn  '>
               <CgMenu
