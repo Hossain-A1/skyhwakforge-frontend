@@ -20,7 +20,6 @@ const DroneitemSection: React.FC<DroneDetailsPageProps> = ({ item }) => {
   const [count, setCount] = useState<number>(1);
 
   const dispatch = useDispatch();
-  console.log(dispatch);
 
   const increaseCount = () => {
     // Use the functional form of setCount to access the previous value

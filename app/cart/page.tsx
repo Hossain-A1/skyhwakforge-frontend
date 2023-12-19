@@ -3,7 +3,7 @@ import { RootState } from "@/redux/store";
 import { useSelector } from "react-redux";
 
 const CartPage = () => {
-  const cart = useSelector((state: RootState) => state.cart.items);
+  const cart = useSelector((state: RootState) => state.cart.droneType);
 
   console.log(cart);
   return (

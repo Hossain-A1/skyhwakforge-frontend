@@ -1,41 +1,41 @@
 // cartSlice.ts
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { droneType } from '@/types/drone.type';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { droneType } from "@/types/drone.type";
 
-interface CartState {
-  items: droneType[];
+interface CartStateInt {
+  droneType: droneType[];
 }
 
-const initialState: CartState = {
-  items:[],
+const initialState: CartStateInt = {
+  droneType: [],
 };
 
 const cartSlice = createSlice({
-  name: 'cart',
+  name: "cart",
   initialState,
   reducers: {
     addToCart(state, action) {
-      const existedItemIndex = state.items.findIndex(
+      const existedItemIndex = state.droneType.findIndex(
         (item) => item._id === action.payload._id
       );
       // if exist
       if (existedItemIndex >= 0) {
-        state.items[existedItemIndex].count += 1;
-        
+        state.droneType[existedItemIndex].count += 1;
       } else {
         // add to cart
         const assembled = { ...action.payload, cartQuantity: 1 };
-        state.items.push(assembled);
-   
+        state.droneType.push(assembled);
       }
       // add to localStorage
-      localStorage.setItem("items", JSON.stringify(state.items));
+      localStorage.setItem("items", JSON.stringify(state.droneType));
     },
     removeFromCart: (state, action: PayloadAction<string>) => {
-      state.items = state.items.filter(item => item._id !== action.payload);
+      state.droneType = state.droneType.filter(
+        (item) => item._id !== action.payload
+      );
     },
-    clearCart: state => {
-      state.items = [];
+    clearCart: (state) => {
+      state.droneType = [];
     },
   },
 });

@@ -6,9 +6,12 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { CgMenu, CgClose } from "react-icons/cg";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 const Navber = () => {
   const pathName = usePathname();
   const [navModal, setNavModal] = useState<boolean>(true);
+  const session = useSelector((state: RootState) => state.auth.userAndToken);
 
   const navContents = [
     { href: "/", label: "home" },
@@ -68,14 +71,18 @@ const Navber = () => {
             </div>
           </div>
 
-          <div className='max-lg:hidden'>
-            <Link
-              href='/sign-up'
-              className={cn(buttonVariants({ variant: "secondary" }))}
-            >
-              Sign up
-            </Link>
-          </div>
+          {!session?.user ? (
+            <div className='max-lg:hidden'>
+              <Link
+                href='/sign-up'
+                className={cn(buttonVariants({ variant: "secondary" }))}
+              >
+                Sign up
+              </Link>
+            </div>
+          ) : (
+            <p>{session?.user.email}</p>
+          )}
         </div>
       </nav>
     </header>
