@@ -11,7 +11,8 @@ import { RootState } from "@/redux/store";
 const Navber = () => {
   const pathName = usePathname();
   const [navModal, setNavModal] = useState<boolean>(true);
-  const session = useSelector((state: RootState) => state.auth.userAndToken);
+  const session = useSelector((state: RootState) => state.auth.userAndToken?.user.email);
+  const cart = useSelector((state: RootState) => state.cart.droneType);
 
   const navContents = [
     { href: "/", label: "home" },
@@ -52,7 +53,7 @@ const Navber = () => {
         <div className='flex items-center gap-5'>
           <Link href='/cart' className='flex items-center'>
             <GiDeliveryDrone className='text-2xl text-blue' />
-            <h3>(12)</h3>
+            <h3>({cart?.length})</h3>
           </Link>
 
           <div className={navModal ? "navber active" : "navber lg:hidden"}>
@@ -71,7 +72,7 @@ const Navber = () => {
             </div>
           </div>
 
-          {!session?.user ? (
+          {!session ? (
             <div className='max-lg:hidden'>
               <Link
                 href='/sign-up'
@@ -81,7 +82,7 @@ const Navber = () => {
               </Link>
             </div>
           ) : (
-            <p>{session?.user.email}</p>
+            <p>{session}</p>
           )}
         </div>
       </nav>

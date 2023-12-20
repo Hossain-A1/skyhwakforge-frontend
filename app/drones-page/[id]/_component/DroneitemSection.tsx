@@ -3,13 +3,12 @@ import { CurrencyFormatter } from "@/components/shared/CurrencyFormatter";
 import Review from "@/components/shared/Review";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
-import { addToCart } from "@/redux/features/drones/CartSlice";
+import { addToCart } from "@/redux/features/carts/CartSlice";
 import { droneType } from "@/types/drone.type";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-
 interface DroneDetailsPageProps {
   item: droneType;
 }
