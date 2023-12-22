@@ -3,31 +3,26 @@ import { CurrencyFormatter } from "@/components/shared/CurrencyFormatter";
 import Review from "@/components/shared/Review";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
-import { addToCart } from "@/redux/features/carts/CartSlice";
+import {
+  addToCart,
+  decreaseCart,
+  increaseCart,
+} from "@/redux/features/carts/CartSlice";
 import { droneType } from "@/types/drone.type";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-interface DroneDetailsPageProps {
+
+interface DroneDetailsItemProps {
   item: droneType;
+  count: number;
 }
 
-const DroneitemSection: React.FC<DroneDetailsPageProps> = ({ item }) => {
+const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item, count: count =1 }) => {
   const [isChangeImage, setIsChangeImage] = useState(item.images[0]);
   const [seeMore, setSeeMore] = useState<boolean>(false);
-  const [count, setCount] = useState<number>(1);
-
   const dispatch = useDispatch();
-
-  const increaseCount = () => {
-    // Use the functional form of setCount to access the previous value
-    setCount((prevCount) => prevCount + 1);
-  };
-  const decreaseCount = () => {
-    // Use the functional form of setCount to access the previous value
-    setCount((prevCount) => prevCount - 1);
-  };
 
   return (
     <section className='space-y-10'>
@@ -89,14 +84,14 @@ const DroneitemSection: React.FC<DroneDetailsPageProps> = ({ item }) => {
               <CurrencyFormatter amount={((item.price / 2) * 5) / 2} />
             </del>
             <span className='text-2xl font-bold'>
-              {<CurrencyFormatter amount={item.price} />}
+              {<CurrencyFormatter amount={item.price * count} />}
             </span>
 
             <div className='cart w-full h-full flex gap-5 items-center'>
               <div className='flex items-center gap-5 bg-light/70 border px-6 py-2 rounded-md'>
                 <button
                   className='text-2xl font-semibold text-dark'
-                  onClick={decreaseCount}
+                  onClick={() => dispatch(decreaseCart(item._id))}
                 >
                   -
                 </button>
@@ -105,19 +100,19 @@ const DroneitemSection: React.FC<DroneDetailsPageProps> = ({ item }) => {
                 </strong>
                 <button
                   className='text-2xl font-semibold text-dark'
-                  onClick={increaseCount}
+                  onClick={() => dispatch(increaseCart(item._id))}
                 >
                   +
                 </button>
               </div>
               <div className='w-4/5'>
                 <Link
+                  onClick={() => dispatch(addToCart({ ...item, count: 1 }))}
                   href={"/cart"}
                   className={cn(
                     buttonVariants({ variant: "secondary", size: "full" }),
                     "text-center w-full"
                   )}
-                  onClick={() => dispatch(addToCart({ ...item, count }))}
                 >
                   Add to Cart
                 </Link>
@@ -136,8 +131,11 @@ const DroneitemSection: React.FC<DroneDetailsPageProps> = ({ item }) => {
           <span className='text-xl text-light/70'>{item.about}</span>
         </div>
         <div className='space-y-5'>
-          <div className='w-full border-light border border-collapse '>
-            <h2 className='text-4xl font-semibold p-1 text-center'>
+          <div className='w-full space-y-5 '>
+            <h2 className='text-4xl font-semibold p-1 text-center flex items-center gap-5'>
+              <span className='text-4xl  font-semibold text-blue border rounded-full '>
+                ⏔
+              </span>{" "}
               Product specifications
             </h2>
             <div className=''>
@@ -164,7 +162,7 @@ const DroneitemSection: React.FC<DroneDetailsPageProps> = ({ item }) => {
 
               <div
                 onClick={() => setSeeMore(!seeMore)}
-                className='text-blue shadow-2xl font-semibold cursor-pointer'
+                className='text-blue shadow-2xl font-semibold cursor-pointer '
               >
                 {!seeMore ? "See More.... " : "See Less"}
               </div>
@@ -233,4 +231,4 @@ const DroneitemSection: React.FC<DroneDetailsPageProps> = ({ item }) => {
   );
 };
 
-export default DroneitemSection;
+export default DroneDetailsItem;

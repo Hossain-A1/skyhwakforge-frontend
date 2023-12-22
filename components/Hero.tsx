@@ -21,22 +21,22 @@ const Hero = () => {
 
         {/* contens */}
 
-        <div className='absolute z-[102] h-full w-full'>
+        <div className='absolute lg:-top-3 md:-top-20 z-[102] h-full w-full'>
           <div className=' grid lg:grid-cols-2 grid-cols-1 items-center h-full w-full '>
             <div className='  flex justify-center items-center'>
-              <div className='drone-image max-lg:h-[20rem] max-lg:w-[20rem] lg:h-[28rem] lg:w-[28rem] max-2xl:h-[38rem] max-2xl:w-[38rem] flex flex-col items-center  '>
+              <div className='drone-image max-lg:h-[20rem] max-lg:w-[20rem] lg:h-[24rem] lg:w-[24rem] max-2xl:h-[48rem] max-2xl:w-[48rem]  flex flex-col items-center  '>
                 <Image
                   src='/images/hero-drone.png'
                   alt='hero-drone'
-                  height={640}
-                  width={1280}
+                  height={1280}
+                  width={1920}
                   priority
                   className='h-full w-full object-cover '
                 />
               </div>
             </div>
 
-            <div className='  hero-para flex flex-col gap-10 items-center'>
+            <div className='  hero-para flex flex-col gap-5 items-center  md:-mt-10'>
               <div className=''>
                 <h1 className='leading-[1.1]'>
                   Explore the Skies with Our Drones

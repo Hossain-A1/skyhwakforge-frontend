@@ -4,7 +4,7 @@ import Error from "@/components/ui/Error";
 import Loading from "@/components/ui/Loading";
 import useFetch from "@/hooks/useFetch";
 import { useRouter } from "next/navigation";
-import DroneitemSection from "./_component/DroneItemSection";
+import DroneDetailsItem from "./_component/DroneDetailsItem";
 
 const DroneDetailsPage = ({ params }: { params: { id: string } }) => {
   const {
@@ -12,6 +12,7 @@ const DroneDetailsPage = ({ params }: { params: { id: string } }) => {
     isLoading,
     error,
   } = useFetch(`/api/drones/${params.id}`);
+
   const router = useRouter();
   return (
     <main className='container sp mt-20'>
@@ -26,7 +27,7 @@ const DroneDetailsPage = ({ params }: { params: { id: string } }) => {
           <Button onClick={() => router.back()}>Go Back</Button>
         </div>
       )}
-      {droneItem && <DroneitemSection item={droneItem} />}
+      {droneItem && <DroneDetailsItem item={droneItem} />}
     </main>
   );
 };

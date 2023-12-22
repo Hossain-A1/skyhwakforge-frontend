@@ -11,8 +11,7 @@ import { RootState } from "@/redux/store";
 const Navber = () => {
   const pathName = usePathname();
   const [navModal, setNavModal] = useState<boolean>(true);
-  const session = useSelector((state: RootState) => state.auth.userAndToken?.user.email);
-  const cart = useSelector((state: RootState) => state.cart.droneType);
+  const {cartItems} = useSelector((state: RootState) => state.cart);
 
   const navContents = [
     { href: "/", label: "home" },
@@ -24,14 +23,14 @@ const Navber = () => {
   ];
 
   return (
-    <header className='h-20 flex items-center fixed top-0 left-0 right-0 z-[999] bg-dark'>
+    <header className='h-20 flex items-center fixed top-0 left-0 right-0 z-[999] bg-dark '>
       <nav className='container flex justify-between items-center  '>
         <div>
           <h2 className='text-blue  font-semibold'>SkyHawkForge</h2>
         </div>
 
-        <div className='h-[100vh]'>
-          <ul className=' nav-tab '>
+        <div className=''>
+          <ul className='flex items-center gap-10 text-light'>
             {navContents.map((item) => (
               <li key={item.label} className='uppercase text-sm'>
                 <Link
@@ -51,12 +50,9 @@ const Navber = () => {
         </div>
 
         <div className='flex items-center gap-5'>
-          <Link href='/cart' className='flex items-center'>
-            <GiDeliveryDrone className='text-2xl text-blue' />
-            <h3>({cart?.length})</h3>
-          </Link>
+        
 
-          <div className={navModal ? "navber active" : "navber lg:hidden"}>
+          <div className='hidden'>
             {/* mobile responsive */}
             <div className='mobile-navber-btn  '>
               <CgMenu
@@ -72,18 +68,21 @@ const Navber = () => {
             </div>
           </div>
 
-          {!session ? (
-            <div className='max-lg:hidden'>
-              <Link
-                href='/sign-up'
-                className={cn(buttonVariants({ variant: "secondary" }))}
-              >
-                Sign up
-              </Link>
-            </div>
-          ) : (
-            <p>{session}</p>
-          )}
+          <div className='max-lg:hidden'>
+            <Link
+              href='/sign-up'
+              className={cn(buttonVariants({ variant: "secondary" }))}
+            >
+              Sign up
+            </Link>
+          </div>
+
+          <div className='flex items-center'>
+         <Link href='/cart' >
+            <GiDeliveryDrone className='text-2xl text-blue' />
+          </Link>
+            <span>({cartItems?.length})</span>
+         </div>
         </div>
       </nav>
     </header>

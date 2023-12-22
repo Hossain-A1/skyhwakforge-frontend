@@ -49,9 +49,9 @@ const SignInForm = () => {
   );
 
   return (
-    <div className='w-2/5'>
+    <div className='w-2/5 h-full'>
       <div className='w-full flex flex-col gap-10'>
-        <div className='flex flex-col gap-1.5'>
+        <div className='flex flex-col gap-1.5 '>
           <h2 className='text-3xl'>Welcome back!</h2>
           <p className='text-light/50'>Please login to your account</p>
         </div>
@@ -72,7 +72,7 @@ const SignInForm = () => {
               type='email'
               id='email'
               placeholder='hello@example.com'
-              className='eq w-full rounded-xl border border-gray bg-transparent px-5 py-3 outline-none focus:border-blue'
+              className='eq w-full rounded-xl border border-gray bg-transparent  px-5 py-3 outline-none focus:border-blue'
             />
           </div>
 
@@ -88,7 +88,7 @@ const SignInForm = () => {
               type='password'
               id='password'
               placeholder='Write your password'
-              className='eq w-full rounded-xl border border-gray bg-transparent px-5 py-3 outline-none focus:border-blue'
+              className='eq w-full rounded-xl border border-gray bg-transparent px-5 py-3 outline-none  focus:border-blue'
             />
           </div>
 
