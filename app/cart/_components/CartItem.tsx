@@ -7,10 +7,9 @@ import {
   increaseCart,
   removeFromCart,
 } from "@/redux/features/carts/CartSlice";
-import { RootState } from "@/redux/store";
 import { droneType } from "@/types/drone.type";
 import Image from "next/image";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 interface CartItemProps {
   addedCart: droneType;
@@ -18,21 +17,9 @@ interface CartItemProps {
 
 const CartItem: React.FC<CartItemProps> = ({ addedCart }) => {
   const dispatch = useDispatch();
-  const { cartItems } = useSelector((state: RootState) => state.cart);
-  /* SUBTOTAL CALCULATION */
-  const total = () => {
-    const calcTotal = cartItems.reduce(
-      (acc, item) => (acc += item.price * item.count),
-      0
-    );
-    const fixedTotal = +calcTotal.toFixed(2);
-    const subtotal = <CurrencyFormatter amount={fixedTotal} />;
-
-    return subtotal;
-  };
 
   return (
-    <section className='space-y-10'>
+    <section className=''>
       <div className='grid grid-cols-7 text-center items-center gap-5 border py-3'>
         <div>
           <strong>{addedCart?._id?.substring(0, 10)}</strong>
@@ -90,17 +77,6 @@ const CartItem: React.FC<CartItemProps> = ({ addedCart }) => {
           >
             Remove
           </Button>
-        </div>
-      </div>
-
-      {/* checkout ui */}
-      <div className='grid grid-cols-2 gap-10'>
-        <div>
-          <button>hello</button>
-        </div>
-        <div>
-          <span>Subtotal</span>
-          <button>{total()}</button>
         </div>
       </div>
     </section>

@@ -8,7 +8,7 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-dark text-white border-dark hover:bg-dark/90 hover:border-dark/90",
+          "bg-red text-white border-vlue hover:bg-red/90",
         secondary: "bg-blue text-white border-blue  hover:bg-blue/90 ",
         danger:
           "bg-dark text-red border-none hover:text-red/70 ",
@@ -16,6 +16,7 @@ export const buttonVariants = cva(
           "bg-transparent text-white border-blue hover:bg-blue hover:text-white",
         lighting:
           "bg-transparent text-light  border-light hover:bg-dark/70 hover:text-white",
+          deepLight:  "bg-light/70 text-dark border-none  ",
       },
       size: {
         auto: "w-auto",
