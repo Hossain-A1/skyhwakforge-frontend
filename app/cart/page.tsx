@@ -10,6 +10,8 @@ import { cn } from "@/lib/utils";
 
 const CartPage = () => {
   const { cartItems } = useSelector((state: RootState) => state.cart);
+
+  const [items] = cartItems;
   const dispatch = useDispatch();
   /* SUBTOTAL CALCULATION */
   const total = () => {
@@ -61,7 +63,7 @@ const CartPage = () => {
               <button className='text-xl font-bold text-blue'>{total()}</button>
             </div>
 
-            <div className="flex justify-end items-center whitespace-normal ">
+            <div className='flex justify-end items-center whitespace-normal '>
               <p>
                 Taxes are already added to the displayed price of our product.
               </p>
@@ -74,7 +76,7 @@ const CartPage = () => {
                 Back to Shopping
               </Link>
               <Link
-                href='/checkout'
+                href={`/checkout/${items?._id}`}
                 className={cn(buttonVariants({ variant: "secondary" }))}
               >
                 Checkout

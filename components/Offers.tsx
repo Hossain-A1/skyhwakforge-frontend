@@ -28,7 +28,7 @@ const Offers = () => {
 
       {isLoading && <Loading isLoading={isLoading} />}
       {error && <Error error={error.message} />}
-      <div className=''>
+      <div className='space-y-20'>
         <Swiper
           pagination={{
             clickable: true,
