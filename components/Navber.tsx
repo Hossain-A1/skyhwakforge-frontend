@@ -11,7 +11,8 @@ import { RootState } from "@/redux/store";
 const Navber = () => {
   const pathName = usePathname();
   const [navModal, setNavModal] = useState<boolean>(true);
-  const {cartItems} = useSelector((state: RootState) => state.cart);
+  const { cartItems } = useSelector((state: RootState) => state.cart);
+  const { userAndToken } = useSelector((state: RootState) => state.auth);
 
   const navContents = [
     { href: "/", label: "home" },
@@ -50,8 +51,6 @@ const Navber = () => {
         </div>
 
         <div className='flex items-center gap-5'>
-        
-
           <div className='hidden'>
             {/* mobile responsive */}
             <div className='mobile-navber-btn  '>
@@ -69,20 +68,26 @@ const Navber = () => {
           </div>
 
           <div className='max-lg:hidden'>
-            <Link
-              href='/sign-up'
-              className={cn(buttonVariants({ variant: "secondary" }))}
-            >
-              Sign up
-            </Link>
+            {userAndToken?.user ? (
+              <div>
+                <p>{userAndToken.user.email}</p>
+              </div>
+            ) : (
+              <Link
+                href='/sign-up'
+                className={cn(buttonVariants({ variant: "secondary" }))}
+              >
+                Sign up
+              </Link>
+            )}
           </div>
 
           <div className='flex items-center'>
-         <Link href='/cart' >
-            <GiDeliveryDrone className='text-2xl text-blue' />
-          </Link>
+            <Link href='/cart'>
+              <GiDeliveryDrone className='text-2xl text-blue' />
+            </Link>
             <span>({cartItems?.length})</span>
-         </div>
+          </div>
         </div>
       </nav>
     </header>

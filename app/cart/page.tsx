@@ -70,7 +70,7 @@ const CartPage = () => {
             </div>
             <div className='flex justify-end gap-10 items-center'>
               <Link
-                href='/checkout'
+                href='/drones-page'
                 className={cn(buttonVariants({ variant: "deepLight" }))}
               >
                 Back to Shopping

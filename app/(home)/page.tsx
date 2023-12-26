@@ -1,13 +1,15 @@
 import About from "@/components/About";
-import Drones from "@/components/Drones";
+import CustomerReviews from "@/components/CustomerReviews";
 import Hero from "@/components/Hero";
+import Offers from "@/components/Offers";
 
 const HomePage = () => {
   return (
     <main>
       <Hero />
+      <Offers/>
       <About />
-      <Drones />
+      <CustomerReviews/>
     </main>
   );
 };

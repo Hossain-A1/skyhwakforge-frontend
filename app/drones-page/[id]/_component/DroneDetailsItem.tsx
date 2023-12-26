@@ -16,12 +16,13 @@ import { useDispatch } from "react-redux";
 
 interface DroneDetailsItemProps {
   item: droneType;
-  count: number;
+
 }
 
-const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item, count: count =1 }) => {
+const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item }) => {
   const [isChangeImage, setIsChangeImage] = useState(item.images[0]);
   const [seeMore, setSeeMore] = useState<boolean>(false);
+  const [count, setCount] = useState<number>(1);
   const dispatch = useDispatch();
 
   return (
@@ -84,7 +85,7 @@ const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item, count: count 
               <CurrencyFormatter amount={((item.price / 2) * 5) / 2} />
             </del>
             <span className='text-2xl font-bold'>
-              {<CurrencyFormatter amount={item.price * count} />}
+              {<CurrencyFormatter amount={item.price * item.count} />}
             </span>
 
             <div className='cart w-full h-full flex gap-5 items-center'>
@@ -96,7 +97,7 @@ const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item, count: count 
                   -
                 </button>
                 <strong className='text-2xl font-semibold text-dark'>
-                  {count}
+                  {item.count}
                 </strong>
                 <button
                   className='text-2xl font-semibold text-dark'
@@ -168,7 +169,7 @@ const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item, count: count 
               </div>
 
               {
-                <aside className={seeMore ? "block" : "hidden"}>
+                <div className={seeMore ? "block" : "hidden"}>
                   <div className='item-model'>
                     <h3 className='text-lg font-semibold'>Max Focal Length</h3>
                     <strong>30 Millimetres</strong>
@@ -221,7 +222,7 @@ const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item, count: count 
                     </h3>
                     <strong>DJI</strong>
                   </div>
-                </aside>
+                </div>
               }
             </div>
           </div>

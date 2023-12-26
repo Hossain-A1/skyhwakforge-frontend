@@ -38,7 +38,7 @@ const cartSlice = createSlice({
 
     clearCart: (state) => {
       state.cartItems = [];
-      toast.success('All catrs clear!')
+      toast.success("All catrs clear!");
     },
 
     // increase
