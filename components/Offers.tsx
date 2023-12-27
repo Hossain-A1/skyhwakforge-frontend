@@ -90,6 +90,8 @@ const Offers = () => {
         {offers &&
           offers.map((droneObj: droneType) => (
             <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
               key={droneObj._id}
               className=' flex flex-wrap items-center justify-center shadow-sm shadow-light rounded-xl hover:scale-105 eq overflow-hidden'
             >

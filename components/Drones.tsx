@@ -32,12 +32,14 @@ const Drones: React.FC<DronesProps> = ({ native }) => {
               </div>
             ))
           : drones &&
-            drones.map((droneObj: droneType) => (
+            drones.sort((a:droneType,b:droneType)=>a.price - b.price).map((droneObj: droneType) => (
               <div
                 key={droneObj._id}
+                data-aos="fade-up"
+                data-aos-duration="1300"
                 className=' flex flex-wrap items-center justify-center shadow-sm shadow-light rounded-xl hover:scale-105 eq overflow-hidden'
               >
-                <DroneItem droneObj={droneObj} />
+                <DroneItem droneObj={droneObj}  />
               </div>
             ))}
       </div>

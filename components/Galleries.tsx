@@ -15,6 +15,7 @@ const Galleries = () => {
           <div
             key={gData._id}
             className=' w-full h-full shadow-sm shadow-blue hover:scale-125 eq'
+            data-aos="zoom-in"   data-aos-duration='700'
           >
             <Link
               href='/drones-page'

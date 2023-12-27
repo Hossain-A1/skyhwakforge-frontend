@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
@@ -14,7 +14,8 @@ interface DroneItemProps {
 
 const DroneItem: React.FC<DroneItemProps> = ({ droneObj }) => {
   return (
-    <div className=' h-[28rem] w-[24rem]  flex flex-col items-center gap-5 '>
+    <div className=' h-[28rem] w-[24rem]  flex flex-col items-center gap-5 '
+    >
       <Link
         href={`/drones-page/${droneObj._id}`}
         className='h-[18rem] w-full block overflow-hidden'
@@ -39,7 +40,7 @@ const DroneItem: React.FC<DroneItemProps> = ({ droneObj }) => {
         <div className='flex justify-between items-center'>
           <strong className='text-light text-xl font-bold'>
             <CurrencyFormatter amount={droneObj.price} />
-            <del className='text-sm font-medium relative -top-5'>
+            <del className='text-sm font-medium relative -top-6 right-3'>
               <CurrencyFormatter amount={((droneObj.price / 2) * 5) / 2} />
             </del>
           </strong>
