@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 const Navber = () => {
   const pathName = usePathname();
-  const [navModal, setNavModal] = useState<boolean>(true);
+  const [ icon, setIcon] = useState<boolean>(false);
   const { cartItems } = useSelector((state: RootState) => state.cart);
   const { userAndToken } = useSelector((state: RootState) => state.auth);
 
@@ -30,17 +30,23 @@ const Navber = () => {
           <h2 className='text-blue  font-semibold'>SkyHawkForge</h2>
         </div>
 
-        <div className=''>
-          <ul className='flex items-center gap-10 text-light'>
+        <div  className={`${
+              !icon
+                ? " max-lg:hidden "
+                : "max-lg:absolute max-lg:bg-dark z-[99] max-lg:left-0 max-lg:bottom-0 max-lg:top-0 max-lg:right-0 max-lg:min-h-screen visible block"
+            }`}>
+        <div className='max-lg:relative max-lg:h-full max-lg:w-full'>
+          <ul className='lg:flex max-lg:flex-col  gap-10  items-center justify-center 
+            max-lg:absolute max-lg:bottom-0 max-lg:top-1/2 max-lg:-translate-y-1/2 max-lg:left-1/2 max-lg:-translate-x-1/2  uppercase max-lg:space-y-10'>
             {navContents.map((item) => (
-              <li key={item.label} className='uppercase text-sm'>
+              <li key={item.label} className='uppercase text-sm '>
                 <Link
-                  onClick={() => setNavModal(false)}
+                  onClick={() => setIcon(false)}
                   href={item.href}
                   className={
                     pathName === item.href
                       ? "text-light underline  underline-offset-8"
-                      : "text-light/40"
+                      : "text-light/40 "
                   }
                 >
                   {item.label}
@@ -49,20 +55,26 @@ const Navber = () => {
             ))}
           </ul>
         </div>
+        </div>
 
         <div className='flex items-center gap-5'>
-          <div className='hidden'>
-            {/* mobile responsive */}
-            <div className='mobile-navber-btn  '>
+        <div
+            className={` ${
+              !icon
+                ? "absolute  right-5 top-6 px-1 py-1 cursor-pointer border border-light rounded-full lg:hidden flex items-center justify-center"
+                : "active"
+            }`}
+          >
+            <div className='mobile-navber-btn relative'>
               <CgMenu
                 name='menu-outline'
-                className='mobile-navber-icon text-4xl'
-                onClick={() => setNavModal(true)}
+                className='mobile-navber-icon text-xl'
+                onClick={() => setIcon(true)}
               />
               <CgClose
                 name='close-outline'
-                className='mobile-navber-icon close-outline'
-                onClick={() => setNavModal(false)}
+                className='mobile-navber-icon close-outline '
+                onClick={() => setIcon(false)}
               />
             </div>
           </div>
@@ -82,7 +94,7 @@ const Navber = () => {
             )}
           </div>
 
-          <div className='flex items-center'>
+          <div className='flex items-center max-md:mr-10'>
             <Link href='/cart'>
               <GiDeliveryDrone className='text-2xl text-blue' />
             </Link>

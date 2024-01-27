@@ -1,12 +1,14 @@
 'use client'
+import { useEffect } from "react";
 
 import About from "@/components/About";
 import CustomerReviews from "@/components/CustomerReviews";
 import Hero from "@/components/Hero";
 import Offers from "@/components/Offers";
+import Support from "@/components/Support";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+
 
 const HomePage = () => {
   useEffect(() => {
@@ -18,6 +20,7 @@ const HomePage = () => {
       <Offers />
       <About />
       <CustomerReviews />
+      <Support/>
     </main>
   );
 };

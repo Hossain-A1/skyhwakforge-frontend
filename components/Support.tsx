@@ -6,11 +6,14 @@ import SectionTitle from "./shared/SectionTitle";
 const Support = () => {
   const [loading, setLoading] = useState<boolean>(false);
   return (
-    <main className='sp container mt-10 space-y-5'>
-          <SectionTitle title="support" headline='We are ready to help you any moments.'/>
+    <main className='sp container lg:mt-10 space-y-5'>
+      <SectionTitle
+        title='support'
+        headline='We are ready to help you any moments.'
+      />
       <section className='grid lg:grid-cols-2 grid-cols-1 gap-5'>
         <div className='flex flex-col items-center h-full w-full'>
-          <form className='h-full w-[20rem] xl:w-[24rem] space-y-5'>
+          <form className='h-full w-full xl:w-[24rem] space-y-5'>
             <div className='flex flex-col gap-2.5  w-full'>
               <label htmlFor='name'>Name</label>
               <input
@@ -53,18 +56,21 @@ const Support = () => {
             </div>
           </form>
         </div>
-        <div className="space-y-5">
-          <h2 className="text-2xl font-semibold">Our supports informations are given bellow.</h2>
-         <div className="flex flex-col gap-5">
-          <h2 className="text-xl font-semibold">Call us: <span className="text-lg font-medium">+0373038373</span></h2>
-          <span className="text-lg font-medium">skywhakforge@help.net</span>
-          <span className="text-lg font-medium">droneterm@help.net</span>
-         </div>
+        <div className='space-y-5'>
+          <h2 className='text-2xl font-semibold'>
+            Our supports informations are given bellow.
+          </h2>
+          <div className='flex flex-col gap-5'>
+            <h2 className='text-xl font-semibold'>
+              Call us: <span className='text-lg font-medium'>+0373038373</span>
+            </h2>
+            <span className='text-lg font-medium'>skywhakforge@help.net</span>
+            <span className='text-lg font-medium'>droneterm@help.net</span>
+          </div>
 
-         {/* trainers gose here */}
+          {/* trainers gose here */}
 
-         <div></div>
-         
+          <div></div>
         </div>
       </section>
     </main>

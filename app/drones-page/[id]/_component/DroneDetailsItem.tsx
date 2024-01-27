@@ -16,7 +16,6 @@ import { useDispatch } from "react-redux";
 
 interface DroneDetailsItemProps {
   item: droneType;
-
 }
 
 const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item }) => {
@@ -29,28 +28,28 @@ const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item }) => {
     <section className='space-y-10'>
       <div className=' grid lg:grid-cols-2 grid-cols-1 gap-5'>
         <div className='left flex flex-col items-center gap-5'>
-          <div className='details-image h-[26rem] w-[28rem]  shadow-sm shadow-blue group'>
+          <div className='details-image lg:h-[26rem] lg:w-[28rem] h-full w-full  shadow-sm shadow-blue group'>
             <Image
               src={isChangeImage}
               alt={item.title}
               height={720}
               width={1080}
               priority
-              className='h-full w-full object-cover group-hover:scale-110 eq'
+              className='h-full w-full object-cover max-md:object-contain group-hover:scale-110 eq'
             />
           </div>
 
-          <div className='flex justify-center gap-5'>
+          <div className='flex  justify-center gap-5'>
             {item.images.map((image, i) => (
               <div key={i} className=''>
-                <div className='details-image h-[6rem] w-[6rem]  border-2  hover:border-dotted eq'>
+                <div className='details-image lg:h-[6rem] lg:w-[6rem] h-12 w-12  border-2  hover:border-dotted eq'>
                   <Image
                     src={image}
                     alt={item.title}
                     height={720}
                     width={1080}
                     priority
-                    className='h-full w-full object-cover cursor-pointer'
+                    className='h-full w-full object-cover  cursor-pointer'
                     onClick={() => setIsChangeImage(image)}
                   />
                 </div>
@@ -62,7 +61,7 @@ const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item }) => {
         <div className='right '>
           <div className='flex flex-col items-start gap-5'>
             <h2 className='text-3xl font-semibold'>{item.title}</h2>
-            <div className='flex gap-2 items-center'>
+            <div className='flex max-md:flex-col gap-2 items-center'>
               <span className='text-light'>{item.rating}</span>
               <Review rate={item} />
               <span className='text-light'>(343)</span>
@@ -85,7 +84,7 @@ const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item }) => {
               <CurrencyFormatter amount={((item.price / 2) * 5) / 2} />
             </del>
             <span className='text-2xl font-bold'>
-              {<CurrencyFormatter amount={item.price * item.count} />}
+              {<CurrencyFormatter amount={item.price} />}
             </span>
 
             <div className='cart w-full h-full flex gap-5 items-center'>
@@ -97,7 +96,7 @@ const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item }) => {
                   -
                 </button>
                 <strong className='text-2xl font-semibold text-dark'>
-                  {item.count}
+                  {count}
                 </strong>
                 <button
                   className='text-2xl font-semibold text-dark'
@@ -133,7 +132,7 @@ const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item }) => {
         </div>
         <div className='space-y-5'>
           <div className='w-full space-y-5 '>
-            <h2 className='text-4xl font-semibold p-1 text-center flex items-center gap-5'>
+            <h2 className='text-4xl font-semibold p-1 text-center flex max-md:flex-col items-center gap-5'>
               <span className='text-4xl  font-semibold text-blue border rounded-full '>
                 ⏔
               </span>{" "}

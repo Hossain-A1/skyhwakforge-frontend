@@ -18,6 +18,7 @@ interface CartItemProps {
 const CartItem: React.FC<CartItemProps> = ({ addedCart }) => {
   const dispatch = useDispatch();
 
+  
   return (
     <section className=''>
       <div className='grid grid-cols-7 text-center items-center gap-5 border py-3'>

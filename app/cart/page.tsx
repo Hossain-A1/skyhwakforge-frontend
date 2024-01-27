@@ -8,10 +8,21 @@ import { clearCart } from "@/redux/features/carts/CartSlice";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
+
+// stripe payment
+const stripePromise = loadStripe(
+  process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY as string
+);
+
 const CartPage = () => {
   const { cartItems } = useSelector((state: RootState) => state.cart);
 
-  const [items] = cartItems;
+  if (cartItems) {
+    console.log(cartItems);
+  }
+
   const dispatch = useDispatch();
   /* SUBTOTAL CALCULATION */
   const total = () => {
@@ -23,6 +34,36 @@ const CartPage = () => {
     const subtotal = <CurrencyFormatter amount={fixedTotal} />;
 
     return subtotal;
+  };
+
+  const handlePayment = async () => {
+    const stripe = await stripePromise;
+
+    if (!stripe) {
+      throw new Error("Failed to load Stripe script");
+    }
+
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/create-checkout-session`,
+      {
+        items: cartItems,
+      }
+    );
+
+    const session = await response.data;
+
+    // Check if the session is valid
+    if (!session || !session.id) {
+      throw new Error("Invalid checkout session");
+    }
+
+    const result = await stripe.redirectToCheckout({
+      sessionId: response.data.id,
+    });
+
+    if (result?.error) {
+      console.log(result.error.message);
+    }
   };
 
   return (
@@ -75,12 +116,12 @@ const CartPage = () => {
               >
                 Back to Shopping
               </Link>
-              <Link
-                href={`/checkout/${items?._id}`}
+              <button
+                onClick={handlePayment}
                 className={cn(buttonVariants({ variant: "secondary" }))}
               >
                 Checkout
-              </Link>
+              </button>
             </div>
           </div>
         </div>

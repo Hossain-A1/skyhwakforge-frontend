@@ -19,8 +19,9 @@ const CustomerReviews = () => {
         headline='Real Experiences Shared by Our Customers'
       />
 
-      <section className='flex flex-wrap gap-5 items-center'>
-        <div className='w-1/4 border-2 space-y-3 p-5  border-blue '>
+      <section >
+      <div className='grid lg:grid-cols-3 grid-cols-1 gap-5 items-center'>
+      <div className='w-full border-2 space-y-3 p-5  border-blue '>
           <div className='flex gap-3 w-full'>
             <div className=' rounded-full'>
               <div className='  w-10 h-10'>
@@ -53,7 +54,7 @@ const CustomerReviews = () => {
             </strong>
           </div>
         </div>
-        <div className='w-1/4 border-2 space-y-3 p-5  border-blue'>
+        <div className='w-full  border-2 space-y-3 p-5  border-blue'>
           <div className='flex gap-3 w-full'>
             <div className=' rounded-full'>
               <div className='  w-10 h-10'>
@@ -86,7 +87,7 @@ const CustomerReviews = () => {
             </strong>
           </div>
         </div>
-        <div className='w-1/4 border-2 space-y-3 p-5  border-blue'>
+        <div className='w-full  border-2 space-y-3 p-5  border-blue'>
           <div className='flex gap-3 w-full'>
             <div className=' rounded-full'>
               <div className='  w-10 h-10'>
@@ -126,10 +127,11 @@ const CustomerReviews = () => {
         >
           {!seeMore ? "See More.... " : "See Less"}
         </button>
+      </div>
 
         {seeMore && (
-          <div className='flex flex-wrap gap-5'>
-            <div className='w-1/4 border-2 space-y-3 p-5  border-blue'>
+          <div className=' grid lg:grid-cols-3 grid-cols-1 gap-5 items-center'>
+            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
@@ -162,7 +164,7 @@ const CustomerReviews = () => {
                 </strong>
               </div>
             </div>
-            <div className='w-1/4 border-2 space-y-3 p-5  border-blue'>
+            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
@@ -195,7 +197,7 @@ const CustomerReviews = () => {
                 </strong>
               </div>
             </div>
-            <div className='w-1/4 border-2 space-y-3 p-5  border-blue'>
+            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
@@ -228,7 +230,7 @@ const CustomerReviews = () => {
                 </strong>
               </div>
             </div>
-            <div className='w-1/4 border-2 space-y-3 p-5  border-blue'>
+            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
@@ -261,7 +263,7 @@ const CustomerReviews = () => {
                 </strong>
               </div>
             </div>
-            <div className='w-1/4 border-2 space-y-3 p-5  border-blue'>
+            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
@@ -295,7 +297,7 @@ const CustomerReviews = () => {
                 </strong>
               </div>
             </div>
-            <div className='w-1/4 border-2 space-y-3 p-5  border-blue'>
+            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
@@ -328,7 +330,7 @@ const CustomerReviews = () => {
                 </strong>
               </div>
             </div>
-            <div className='w-1/4 border-2 space-y-3 p-5  border-blue'>
+            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
@@ -362,7 +364,7 @@ const CustomerReviews = () => {
                 </strong>
               </div>
             </div>
-            <div className='w-1/4 border-2 space-y-3 p-5  border-blue'>
+            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
@@ -395,7 +397,7 @@ const CustomerReviews = () => {
                 </strong>
               </div>
             </div>
-            <div className='w-1/4 border-2 space-y-3 p-5  border-blue'>
+            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>

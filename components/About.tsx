@@ -34,7 +34,7 @@ const About = () => {
               creatively.
             </p>
 
-            <div className='lg:flex max-lg:flex-col items-center   gap-5'>
+            <div className='flex  items-center   gap-5'>
               <div className=' p-5  shadow-sm shadow-blue flex items-center justify-center h-full w-full'>
                 <span className='lg:text-2xl max-lg:text-sm text-light/70 font-bold uppercase text-center'>
                   22K+ sold
@@ -45,16 +45,11 @@ const About = () => {
                   4.7K stocks
                 </span>
               </div>
-              <div className='p-5 shadow-sm shadow-blue flex items-center justify-center h-full w-full'>
-                <span className='lg:text-2xl max-lg:text-sm text-light/70 font-bold uppercase text-center '>8.4K+ sold</span>
-              </div>
-              <div className='p-5 shadow-sm shadow-blue flex items-center justify-center h-full w-full'>
-                <span className='lg:text-2xl max-lg:text-sm text-light/70 font-bold uppercase text-center '>8K+ sold</span>
-              </div>
+            
             </div>
           </div>
           <div className=' right-side lg:flex max-lg:flex-col justify-between '>
-            <div className='about-drone-image max-lg:h-full max-lg:w-[90vw] lg:h-[20rem] lg:w-[20rem] max-2xl::h-[30rem] max-2xl:w-[30rem] flex flex-col items-center  '>
+            <div className='about-drone-image  '>
               <Image
                 src='/images/about-drone.png'
                 alt='hero-drone'

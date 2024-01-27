@@ -21,9 +21,9 @@ const Drones: React.FC<DronesProps> = ({ native }) => {
 
       {isLoading && <Loading isLoading={isLoading} />}
       {error && <Error error={error.message} />}
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10  '>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10'>
         {!native && drones
-          ? drones.slice(0, 3).map((droneObj: droneType) => (
+          ? drones.slice(0, 3).map((droneObj: droneType) =>(
               <div
                 key={droneObj._id}
                 className=' flex flex-wrap items-center justify-center shadow-sm shadow-light rounded-xl hover:scale-105 eq overflow-hidden'

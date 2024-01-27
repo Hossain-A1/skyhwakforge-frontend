@@ -12,11 +12,12 @@ export type droneType= {
   price: number;
   stock:number;
   rating:number;
+  count:number;
   trainers: trainerType[];
   orders: orderType[];
   createdAt:string;
   updatedAt:string;
   __v:number
-  count:number;
+  
   
 } 

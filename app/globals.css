@@ -12,16 +12,35 @@
 /* typhography */
 
 h1 {
-  @apply lg:text-4xl xl:text-7xl text-light font-semibold;
+  @apply lg:text-4xl text-3xl xl:text-7xl text-light font-semibold;
 }
 
 p {
-  @apply text-left text-light/50 w-4/5;
+  @apply text-left max-md:text-center text-light/50 w-4/5 max-md:w-full;
 }
 
 
 
 /* responsive  navigation*/
+.mobile-navber-btn {
+  @apply hidden bg-transparent cursor-pointer border-none max-lg:inline-block max-lg:z-[9999] max-lg:border;
+}
+
+.active .mobile-navber-icon {
+  @apply max-lg:hidden max-lg:text-xl max-lg:absolute 
+}
+
+.mobile-navber-icon[name="close-outline"] {
+  @apply hidden max-lg:text-xl max-lg:text-light ;
+}
+
+
+.close-outline {
+  @apply hidden text-xl;
+}
+.active .close-outline {
+  @apply max-lg:inline-block fixed top-8 right-6 border   text-light;
+}
 
 .swiper-pagination-bullet {
   background-color: #edf7f7 !important;

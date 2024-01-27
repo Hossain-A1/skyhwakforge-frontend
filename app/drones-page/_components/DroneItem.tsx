@@ -26,7 +26,7 @@ const DroneItem: React.FC<DroneItemProps> = ({ droneObj }) => {
           src={droneObj.images[0]}
           alt={droneObj.title}
           priority
-          className='h-full w-full object-cover '
+          className='h-full w-full object-cover  '
         />
       </Link>
       <div className='h-[8rem] w-full px-5 space-y-3'>
@@ -37,10 +37,10 @@ const DroneItem: React.FC<DroneItemProps> = ({ droneObj }) => {
           <span className='text-light'>(343)</span>
         </div>
 
-        <div className='flex justify-between items-center'>
-          <strong className='text-light text-xl font-bold'>
+        <div className='flex justify-between gap-5 items-center'>
+          <strong className='relative text-light text-xl font-bold '>
             <CurrencyFormatter amount={droneObj.price} />
-            <del className='text-sm font-medium relative -top-6 right-3'>
+            <del className='text-sm font-medium absolute -top-5 left-12'>
               <CurrencyFormatter amount={((droneObj.price / 2) * 5) / 2} />
             </del>
           </strong>

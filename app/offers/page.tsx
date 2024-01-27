@@ -3,7 +3,7 @@ import Offers from "@/components/Offers"
 const OffersPage = () => {
   return (
     <main>
-      <Offers/>
+      <Offers native/>
     </main>
   )
 }
