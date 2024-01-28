@@ -12,7 +12,7 @@
 /* typhography */
 
 h1 {
-  @apply lg:text-4xl text-3xl xl:text-7xl text-light font-semibold;
+  @apply lg:text-4xl max-md:text-3xl xl:text-7xl text-light font-semibold;
 }
 
 p {

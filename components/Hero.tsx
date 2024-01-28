@@ -21,7 +21,7 @@ const Hero = () => {
 
         {/* contens */}
 
-        <div className='absolute  top-32 max-md:top-1/2   z-[103]   rotate-12 max-md:rotate-0'>
+        <div className='absolute  top-36 max-md:top-1/2   z-[103]   rotate-12 max-md:rotate-0'>
           <div className='hero-para flex flex-col text-center gap-5 items-center   '>
             <div data-aos='fade-up' data-aos-duration='1000'>
               <h1 className='leading-[1.1]'>
@@ -61,7 +61,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className='absolute overflow-hidden z-[102] lg:left-10 top-20 max-md:-top-32 h-full w-full'>
+        <div className='absolute overflow-hidden z-[102] lg:left-1/2 lg:-translate-x-1/2 top-20 max-md:-top-32 h-full w-full'>
           <div
             className='drone-image w-1/2 max-md:w-full h-full flex flex-col justify-center items-center '
             data-aos='fade-left'

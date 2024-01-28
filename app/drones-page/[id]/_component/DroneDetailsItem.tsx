@@ -8,20 +8,22 @@ import {
   decreaseCart,
   increaseCart,
 } from "@/redux/features/carts/CartSlice";
+import { RootState } from "@/redux/store";
 import { droneType } from "@/types/drone.type";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 interface DroneDetailsItemProps {
   item: droneType;
 }
 
 const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item }) => {
+  const { cartItems } = useSelector((state: RootState) => state.cart);
+
   const [isChangeImage, setIsChangeImage] = useState(item.images[0]);
   const [seeMore, setSeeMore] = useState<boolean>(false);
-  const [count, setCount] = useState<number>(1);
   const dispatch = useDispatch();
 
   return (
@@ -96,7 +98,7 @@ const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item }) => {
                   -
                 </button>
                 <strong className='text-2xl font-semibold text-dark'>
-                  {count}
+                  {item.count}
                 </strong>
                 <button
                   className='text-2xl font-semibold text-dark'

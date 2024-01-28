@@ -48,9 +48,9 @@ const Offers: React.FC<OffersProps> = ({ native }) => {
           className='mySwiper h-[20rem] w-full'
         >
           {offers?.length > 0 &&
-            offers.map((item: droneType) => (
+            offers.slice(2, 7).map((item: droneType) => (
               <SwiperSlide key={item._id} className='h-full w-full relative'>
-                <div className='absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-dark/30 z-[101]'></div>
+                <div className='absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-dark/30 z-[101] overflow-hidden'></div>
 
                 <Image
                   src={item.images[0]}
@@ -61,23 +61,22 @@ const Offers: React.FC<OffersProps> = ({ native }) => {
                   className='h-full w-full object-cover max-md:object-contain z-[100]'
                 />
 
-                <div className='absolute top-10 left-40 z-[102] '>
+                <div className='absolute top-10 left-40 max-md:left-0 max-md:top-14 z-[102] '>
                   <div className='flex justify-between gap-5 items-center'>
-                    <div className='flex flex-col gap-5 '>
+                    <div className='flex flex-col max-md:flex gap-5 '>
                       <h1 className='text-light '>{item.title}</h1>
-                      <del className='text-light text-2xl '>
+                      <del className='text-light text-2xl max-md:text-xl '>
                         <CurrencyFormatter
                           amount={((item.price / 2) * 5) / 2}
                         />
                       </del>
 
-                      <strong className='text-4xl text-red-700 font-bold'>
-                        {" "}
+                      <strong className='text-4xl max-md:text-xl text-red-700 font-bold'>
                         <CurrencyFormatter amount={item.price} />
                       </strong>
                     </div>
 
-                    <div className='space-y-5'>
+                    <div className='space-y-5 max-md:-mx-16 '>
                       <span className='text-light/70'>{item.createdAt}</span>
                       <div className='flex gap-2 items-center text-2xl '>
                         <span className='text-light'>{item.rating}</span>
@@ -207,7 +206,10 @@ const Offers: React.FC<OffersProps> = ({ native }) => {
 
         {!native && (
           <div className='flex justify-center items-center '>
-            <Link href='/drones-page' className={cn(buttonVariants({ variant: "outline" }))}>
+            <Link
+              href='/drones-page'
+              className={cn(buttonVariants({ variant: "outline" }))}
+            >
               See all drones
             </Link>
           </div>
