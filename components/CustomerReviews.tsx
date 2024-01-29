@@ -19,119 +19,132 @@ const CustomerReviews = () => {
         headline='Real Experiences Shared by Our Customers'
       />
 
-      <section >
-      <div className='grid lg:grid-cols-3 grid-cols-1 gap-5 items-center'>
-      <div className='w-full border-2 space-y-3 p-5  border-blue '>
-          <div className='flex gap-3 w-full'>
-            <div className=' rounded-full'>
-              <div className='  w-10 h-10'>
-                <Image
-                  src='https://randomuser.me/api/portraits/men/79.jpg'
-                  alt='hero-drone'
-                  height={280}
-                  width={280}
-                  priority
-                  className='h-full w-full rounded-full object-cover  '
-                />
+      <section className='space-y-5'>
+        <div className='grid lg:grid-cols-3 grid-cols-1 gap-5 items-center'>
+          <div
+            className='w-full border-2 space-y-3 p-5  border-blue '
+            data-aos='zoom-in'
+            data-aos-duration='700'
+          >
+            <div className='flex gap-3 w-full'>
+              <div className=' rounded-full'>
+                <div className='  w-10 h-10'>
+                  <Image
+                    src='https://randomuser.me/api/portraits/men/79.jpg'
+                    alt='hero-drone'
+                    height={280}
+                    width={280}
+                    priority
+                    className='h-full w-full rounded-full object-cover  '
+                  />
+                </div>
+              </div>
+
+              <div className='w-full '>
+                <h2 className='flex items-center gap-2'>
+                  pekkka{" "}
+                  <b>
+                    <BsCheckCircleFill className='text-green-700 overflow-hidden rounded-full text-xs' />
+                  </b>
+                </h2>
+                <p className='text-xs'>a month ago</p>
               </div>
             </div>
-
-            <div className='w-full '>
-              <h2 className='flex items-center gap-2'>
-                pekkka{" "}
-                <b>
-                  <BsCheckCircleFill className='text-green-700 overflow-hidden rounded-full text-xs' />
-                </b>
-              </h2>
-              <p className='text-xs'>a month ago</p>
+            <div className='w-full'>
+              <Review rate={item} />
+              <strong className='text-justify text-sm'>
+                "Absolutely amazed by the performance and stability of my
+                SkyhawkForge drone. Aerial views are breathtaking!"
+              </strong>
             </div>
           </div>
-          <div className='w-full'>
-            <Review rate={item} />
-            <strong className='text-justify text-sm'>
-              "Absolutely amazed by the performance and stability of my
-              SkyhawkForge drone. Aerial views are breathtaking!"
-            </strong>
-          </div>
-        </div>
-        <div className='w-full  border-2 space-y-3 p-5  border-blue'>
-          <div className='flex gap-3 w-full'>
-            <div className=' rounded-full'>
-              <div className='  w-10 h-10'>
-                <Image
-                  src='https://randomuser.me/api/portraits/women/85.jpg'
-                  alt='hero-drone'
-                  height={280}
-                  width={280}
-                  priority
-                  className='h-full w-full rounded-full object-cover  '
-                />
+          <div
+            className='w-full  border-2 space-y-3 p-5  border-blue'
+            data-aos='zoom-in'
+            data-aos-duration='700'
+          >
+            <div className='flex gap-3 w-full'>
+              <div className=' rounded-full'>
+                <div className='  w-10 h-10'>
+                  <Image
+                    src='https://randomuser.me/api/portraits/women/85.jpg'
+                    alt='hero-drone'
+                    height={280}
+                    width={280}
+                    priority
+                    className='h-full w-full rounded-full object-cover  '
+                  />
+                </div>
+              </div>
+
+              <div className='w-full '>
+                <h2 className='flex items-center gap-2'>
+                  Sara{" "}
+                  <b>
+                    <BsCheckCircleFill className='text-green-700 overflow-hidden rounded-full text-xs' />
+                  </b>
+                </h2>
+                <p className='text-xs'>a week ago</p>
               </div>
             </div>
-
-            <div className='w-full '>
-              <h2 className='flex items-center gap-2'>
-                Sara{" "}
-                <b>
-                  <BsCheckCircleFill className='text-green-700 overflow-hidden rounded-full text-xs' />
-                </b>
-              </h2>
-              <p className='text-xs'>a week ago</p>
+            <div className='w-full'>
+              <Review rate={item} />
+              <strong className='text-justify text-sm'>
+                "Sleek design, easy to fly, and stunning camera quality.
+                SkyhawkForge drones are top-notch!"
+              </strong>
             </div>
           </div>
-          <div className='w-full'>
-            <Review rate={item} />
-            <strong className='text-justify text-sm'>
-              "Sleek design, easy to fly, and stunning camera quality.
-              SkyhawkForge drones are top-notch!"
-            </strong>
-          </div>
-        </div>
-        <div className='w-full  border-2 space-y-3 p-5  border-blue'>
-          <div className='flex gap-3 w-full'>
-            <div className=' rounded-full'>
-              <div className='  w-10 h-10'>
-                <Image
-                  src='https://randomuser.me/api/portraits/women/64.jpg'
-                  alt='hero-drone'
-                  height={280}
-                  width={280}
-                  priority
-                  className='h-full w-full rounded-full object-cover  '
-                />
+          <div
+            className='w-full  border-2 space-y-3 p-5  border-blue'
+            data-aos='zoom-in'
+            data-aos-duration='700'
+          >
+            <div className='flex gap-3 w-full'>
+              <div className=' rounded-full'>
+                <div className='  w-10 h-10'>
+                  <Image
+                    src='https://randomuser.me/api/portraits/women/64.jpg'
+                    alt='hero-drone'
+                    height={280}
+                    width={280}
+                    priority
+                    className='h-full w-full rounded-full object-cover  '
+                  />
+                </div>
+              </div>
+
+              <div className='w-full '>
+                <h2 className='flex items-center gap-2'>
+                  Mira{" "}
+                  <b>
+                    <BsCheckCircleFill className='text-green-700 overflow-hidden rounded-full text-xs' />
+                  </b>
+                </h2>
+                <p className='text-xs'>a month ago</p>
               </div>
             </div>
-
-            <div className='w-full '>
-              <h2 className='flex items-center gap-2'>
-                Mira{" "}
-                <b>
-                  <BsCheckCircleFill className='text-green-700 overflow-hidden rounded-full text-xs' />
-                </b>
-              </h2>
-              <p className='text-xs'>a month ago</p>
+            <div className='w-full'>
+              <Review rate={item} />
+              <strong className='text-justify text-sm'>
+                "Impressed with the durable build and smooth controls.
+                SkyhawkForge sets the standard for drone excellence."
+              </strong>
             </div>
           </div>
-          <div className='w-full'>
-            <Review rate={item} />
-            <strong className='text-justify text-sm'>
-              "Impressed with the durable build and smooth controls.
-              SkyhawkForge sets the standard for drone excellence."
-            </strong>
-          </div>
         </div>
-
-        <button
-          onClick={() => setSeeMore(!seeMore)}
-          className='block text-center'
-        >
-          {!seeMore ? "See More.... " : "See Less"}
-        </button>
-      </div>
 
         {seeMore && (
-          <div className=' grid lg:grid-cols-3 grid-cols-1 gap-5 items-center'>
-            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
+          <div
+            className=' grid lg:grid-cols-3 grid-cols-1 gap-5 items-center'
+            data-aos='zoom-in'
+            data-aos-duration='700'
+          >
+            <div
+              className='w-full  border-2 space-y-3 p-5  border-blue'
+              data-aos='zoom-in'
+              data-aos-duration='700'
+            >
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
@@ -164,7 +177,11 @@ const CustomerReviews = () => {
                 </strong>
               </div>
             </div>
-            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
+            <div
+              className='w-full  border-2 space-y-3 p-5  border-blue'
+              data-aos='zoom-in'
+              data-aos-duration='700'
+            >
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
@@ -197,7 +214,11 @@ const CustomerReviews = () => {
                 </strong>
               </div>
             </div>
-            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
+            <div
+              className='w-full  border-2 space-y-3 p-5  border-blue'
+              data-aos='zoom-in'
+              data-aos-duration='700'
+            >
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
@@ -230,7 +251,11 @@ const CustomerReviews = () => {
                 </strong>
               </div>
             </div>
-            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
+            <div
+              className='w-full  border-2 space-y-3 p-5  border-blue'
+              data-aos='zoom-in'
+              data-aos-duration='700'
+            >
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
@@ -263,7 +288,11 @@ const CustomerReviews = () => {
                 </strong>
               </div>
             </div>
-            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
+            <div
+              className='w-full  border-2 space-y-3 p-5  border-blue'
+              data-aos='zoom-in'
+              data-aos-duration='700'
+            >
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
@@ -297,7 +326,11 @@ const CustomerReviews = () => {
                 </strong>
               </div>
             </div>
-            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
+            <div
+              className='w-full  border-2 space-y-3 p-5  border-blue'
+              data-aos='zoom-in'
+              data-aos-duration='700'
+            >
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
@@ -330,7 +363,11 @@ const CustomerReviews = () => {
                 </strong>
               </div>
             </div>
-            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
+            <div
+              className='w-full  border-2 space-y-3 p-5  border-blue'
+              data-aos='zoom-in'
+              data-aos-duration='700'
+            >
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
@@ -364,7 +401,11 @@ const CustomerReviews = () => {
                 </strong>
               </div>
             </div>
-            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
+            <div
+              className='w-full  border-2 space-y-3 p-5  border-blue'
+              data-aos='zoom-in'
+              data-aos-duration='700'
+            >
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
@@ -397,7 +438,11 @@ const CustomerReviews = () => {
                 </strong>
               </div>
             </div>
-            <div className='w-full  border-2 space-y-3 p-5  border-blue'>
+            <div
+              className='w-full  border-2 space-y-3 p-5  border-blue'
+              data-aos='zoom-in'
+              data-aos-duration='700'
+            >
               <div className='flex gap-3 w-full'>
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
@@ -432,6 +477,14 @@ const CustomerReviews = () => {
             </div>
           </div>
         )}
+        <div className='flex items-center justify-center'>
+          <button
+            onClick={() => setSeeMore(!seeMore)}
+            className='block text-blue text-center'
+          >
+            {!seeMore ? "See More.... " : "See Less"}
+          </button>
+        </div>
       </section>
     </main>
   );

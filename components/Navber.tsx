@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 const Navber = () => {
   const pathName = usePathname();
-  const [ icon, setIcon] = useState<boolean>(false);
+  const [icon, setIcon] = useState<boolean>(false);
   const { cartItems } = useSelector((state: RootState) => state.cart);
   const { userAndToken } = useSelector((state: RootState) => state.auth);
 
@@ -30,35 +30,39 @@ const Navber = () => {
           <h2 className='text-blue  font-semibold'>SkyHawkForge</h2>
         </div>
 
-        <div  className={`${
-              !icon
-                ? " max-lg:hidden "
-                : "max-lg:absolute max-lg:bg-dark z-[99] max-lg:left-0 max-lg:bottom-0 max-lg:top-0 max-lg:right-0 max-lg:min-h-screen visible block"
-            }`}>
-        <div className='max-lg:relative max-lg:h-full max-lg:w-full'>
-          <ul className='lg:flex max-lg:flex-col  gap-10  items-center justify-center 
-            max-lg:absolute max-lg:bottom-0 max-lg:top-1/2 max-lg:-translate-y-1/2 max-lg:left-1/2 max-lg:-translate-x-1/2  uppercase max-lg:space-y-10'>
-            {navContents.map((item) => (
-              <li key={item.label} className='uppercase text-sm '>
-                <Link
-                  onClick={() => setIcon(false)}
-                  href={item.href}
-                  className={
-                    pathName === item.href
-                      ? "text-light underline  underline-offset-8"
-                      : "text-light/40 "
-                  }
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <div
+          className={`${
+            !icon
+              ? " max-lg:hidden "
+              : "max-lg:absolute max-lg:bg-dark z-[99] max-lg:left-0 max-lg:bottom-0 max-lg:top-0 max-lg:right-0 max-lg:min-h-screen visible block eq"
+          }`}
+        >
+          <div className='max-lg:relative max-lg:h-full max-lg:w-full'>
+            <ul
+              className='lg:flex max-lg:flex-col  gap-10  items-center justify-center 
+            max-lg:absolute max-lg:bottom-0 max-lg:top-1/2 max-lg:-translate-y-1/2 max-lg:left-1/2 max-lg:-translate-x-1/2  uppercase max-lg:space-y-10'
+            >
+              {navContents.map((item) => (
+                <li key={item.label} className='uppercase text-sm '>
+                  <Link
+                    onClick={() => setIcon(false)}
+                    href={item.href}
+                    className={
+                      pathName === item.href
+                        ? "text-light underline  underline-offset-8"
+                        : "text-light/40 "
+                    }
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className='flex items-center gap-5'>
-        <div
+          <div
             className={` ${
               !icon
                 ? "absolute  right-5 top-6 px-1 py-1 cursor-pointer border border-light rounded-full lg:hidden flex items-center justify-center"
@@ -68,12 +72,12 @@ const Navber = () => {
             <div className='mobile-navber-btn relative'>
               <CgMenu
                 name='menu-outline'
-                className='mobile-navber-icon text-xl'
+                className='mobile-navber-icon  text-xl'
                 onClick={() => setIcon(true)}
               />
               <CgClose
                 name='close-outline'
-                className='mobile-navber-icon close-outline '
+                className='mobile-navber-icon  close-outline '
                 onClick={() => setIcon(false)}
               />
             </div>

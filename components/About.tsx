@@ -1,9 +1,19 @@
+"use client";
 import Image from "next/image";
 import SectionTitle from "./shared/SectionTitle";
+import useFetch from "@/hooks/useFetch";
+import { trainerType } from "@/types/trainerType";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "./ui/Button";
+import Loading from "./ui/Loading";
+import { useState } from "react";
 
 const About = () => {
+  const { data: trainers, error, isLoading } = useFetch("/api/trainers");
+  const [seeMore, setSeeMore] = useState<boolean>(false);
   return (
-    <section className='container h-full w-full  mt-40'>
+    <section className='container sp   mt-20'>
       <div className='flex flex-col gap-10'>
         <div className='top-side'>
           <SectionTitle
@@ -45,7 +55,6 @@ const About = () => {
                   4.7K stocks
                 </span>
               </div>
-            
             </div>
           </div>
           <div className=' right-side lg:flex max-lg:flex-col justify-between '>
@@ -73,6 +82,97 @@ const About = () => {
               </ol>
             </div>
           </div>
+        </div>
+      </div>
+      {/* trainers gose here */}
+
+      <div className='trainer sp '>
+        <SectionTitle title='Trainers' headline='Our Expart Trainers' />
+        {isLoading && <Loading />}
+        <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-cols-1'>
+          {!seeMore
+            ? trainers &&
+              trainers.slice(0, 3).map((trainer: trainerType) => (
+                <div
+                  className='p-5 border flex flex-col items-center rounded-xl gap-2'
+                  data-aos='zoom-in'
+                  data-aos-duration='700'
+                >
+                  <div className='h-16 w-16 rounded-full overflow-hidden'>
+                    <Image
+                      src={trainer.picUrl}
+                      alt='trainer image'
+                      height='200'
+                      width='200'
+                      priority
+                      className='h-full w-full object-cover'
+                    />
+                  </div>
+
+                  <div className='relative '>
+                    <span className='lg:rotate-45 rotate-90  block absolute lg:left-2 max-sm:left-8 max-sm:top-5   lg:-top-10'>
+                      {trainer._id}
+                    </span>
+                  </div>
+                  <h2 className='text-lg uppercase text-center'>
+                    {trainer.name}
+                  </h2>
+                  <h3 className='text-gray-500'>{trainer.designation}</h3>
+                  <h5 className='text-sm font-extralight italic'>
+                    DateOfBirth: {trainer.dateOfBirth}
+                  </h5>
+                  <Link
+                    href='/'
+                    className={cn(buttonVariants({ variant: "secondary" }))}
+                  >
+                    Read me
+                  </Link>
+                </div>
+              ))
+            : trainers.map((trainer: trainerType) => (
+                <div
+                  className='p-5 border flex flex-col items-center rounded-xl gap-2'
+                  data-aos='zoom-in'
+                  data-aos-duration='700'
+                >
+                  <div className='h-16 w-16 rounded-full overflow-hidden'>
+                    <Image
+                      src={trainer.picUrl}
+                      alt='trainer image'
+                      height='200'
+                      width='200'
+                      priority
+                      className='h-full w-full object-cover'
+                    />
+                  </div>
+
+                  <div className='relative '>
+                    <span className='lg:rotate-45 rotate-90 text-right block absolute lg:left-2 sm:left-5  md:left-14  lg:-top-12'>
+                      {trainer._id}
+                    </span>
+                  </div>
+                  <h2 className='text-lg uppercase text-center'>
+                    {trainer.name}
+                  </h2>
+                  <h3 className='text-gray-500'>{trainer.designation}</h3>
+                  <h5 className='text-sm font-extralight italic'>
+                    DateOfBirth: {trainer.dateOfBirth}
+                  </h5>
+                  <Link
+                    href='/'
+                    className={cn(buttonVariants({ variant: "secondary" }))}
+                  >
+                    Reed me
+                  </Link>
+                </div>
+              ))}
+
+          <button
+            onClick={() => setSeeMore(!seeMore)}
+            className='block text-blue text-center'
+          >
+            {!seeMore ? "See More.... " : "See Less"}
+          </button>
         </div>
       </div>
     </section>

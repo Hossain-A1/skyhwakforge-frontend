@@ -48,7 +48,7 @@ const Offers: React.FC<OffersProps> = ({ native }) => {
           className='mySwiper h-[20rem] w-full'
         >
           {offers?.length > 0 &&
-            offers.slice(2, 7).map((item: droneType) => (
+            offers.slice(4, 9).map((item: droneType) => (
               <SwiperSlide key={item._id} className='h-full w-full relative'>
                 <div className='absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-dark/30 z-[101] overflow-hidden'></div>
 

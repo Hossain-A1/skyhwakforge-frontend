@@ -8,6 +8,7 @@ import Offers from "@/components/Offers";
 import Support from "@/components/Support";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Access from "@/components/Access";
 
 
 const HomePage = () => {
@@ -21,6 +22,7 @@ const HomePage = () => {
       <About />
       <CustomerReviews />
       <Support/>
+      <Access/>
     </main>
   );
 };

@@ -6,7 +6,7 @@ import SectionTitle from "./shared/SectionTitle";
 const Support = () => {
   const [loading, setLoading] = useState<boolean>(false);
   return (
-    <main className='sp container lg:mt-10 space-y-5'>
+    <main className='sp container lg:mt-10 space-y-5 min-h-screen'>
       <SectionTitle
         title='support'
         headline='We are ready to help you any moments.'
@@ -66,6 +66,8 @@ const Support = () => {
             </h2>
             <span className='text-lg font-medium'>skywhakforge@help.net</span>
             <span className='text-lg font-medium'>droneterm@help.net</span>
+            <p>
+With a clientele exceeding 700, our commitment to delivering exceptional support has consistently garnered satisfaction from our clients. We take pride in our unwavering dedication to meeting the needs of our diverse customer base, ensuring that their experiences with our services are nothing short of outstanding. The trust and positive feedback we receive from over 700 clients stand as a testament to our relentless pursuit of excellence in support, solidifying our position as a trusted partner in their success.</p>
           </div>
 
           {/* trainers gose here */}

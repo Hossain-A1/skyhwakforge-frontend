@@ -49,7 +49,7 @@ const SignInForm = () => {
   );
 
   return (
-    <div className='w-2/5 h-full'>
+    <div className='lg:w-2/5 w-full h-full'>
       <div className='w-full flex flex-col gap-10'>
         <div className='flex flex-col gap-1.5 '>
           <h2 className='text-3xl'>Welcome back!</h2>
@@ -58,7 +58,7 @@ const SignInForm = () => {
 
         <form
           onSubmit={handleSubmit}
-          className='flex w-full flex-col gap-5 text-lg'
+          className='w-full space-y-5'
         >
           <div className='flex flex-col items-start gap-1.5 '>
             <label htmlFor='email' className='cursor-pointer'>
@@ -92,7 +92,7 @@ const SignInForm = () => {
             />
           </div>
 
-          <Button variant='secondary' type='submit' isLoading={loading}>
+          <Button variant='secondary' size='full' type='submit' isLoading={loading}>
             Login
           </Button>
 

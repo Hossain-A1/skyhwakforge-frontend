@@ -50,7 +50,7 @@ const SignUpForm = () => {
   );
 
   return (
-    <div className='w-2/5 '>
+    <div className='lg:w-1/2 lg:translate-x-40 w-full'>
       <div className='flex flex-col gap-10 w-full'>
         <div className='flex flex-col gap-1.5'>
           <h2 className='text-3xl '>Create an account</h2>
@@ -61,9 +61,9 @@ const SignUpForm = () => {
 
         <form
           onSubmit={handleSubmit}
-          className='flex w-full flex-col gap-5 text-lg'
+          className='flex  flex-col gap-5 text-lg'
         >
-          <div className='space-y-2.5'>
+          <div className='flex flex-col items-start gap-1.5'>
             <label htmlFor='name' className='cursor-pointer '>
               Name
             </label>
@@ -75,7 +75,7 @@ const SignUpForm = () => {
               type='text'
               id='name'
               placeholder='name'
-              className='eq w-full  rounded-xl border border-gray bg-transparent px-5 py-3 outline-none focus:border-blue'
+              className='eq lg:w-1/2  w-full  rounded-xl border border-gray bg-transparent px-5 py-3 outline-none focus:border-blue'
             />
           </div>
           <div className='flex flex-col items-start gap-1.5'>
@@ -90,7 +90,7 @@ const SignUpForm = () => {
               type='email'
               id='email'
               placeholder='hello@example.com'
-              className='eq w-full rounded-xl border border-gray bg-transparent px-5 py-3 outline-none focus:border-blue'
+              className='eq lg:w-1/2 w-full rounded-xl border border-gray bg-transparent px-5 py-3 outline-none focus:border-blue'
             />
           </div>
 
@@ -106,20 +106,22 @@ const SignUpForm = () => {
               type='password'
               id='password'
               placeholder='Write your password'
-              className='eq w-full rounded-xl border border-gray bg-transparent px-5 py-3 outline-none focus:border-blue'
+              className='eq lg:w-1/2 w-full rounded-xl border border-gray bg-transparent px-5 py-3 outline-none focus:border-blue'
             />
           </div>
-
-          <Button variant='secondary' type='submit' isLoading={loading}>
+          <div className="w-full lg:w-1/2">
+          <Button variant='secondary' size='full'  type='submit' isLoading={loading}>
             Register
           </Button>
+          </div>
+        
 
-          <p>
+          <div className="w-full lg:w-1/2">
             <span className='text-light/50'>Already have an account?</span>{" "}
             <Link href='/sign-in' className='text-blue'>
               Login
             </Link>
-          </p>
+          </div>
         </form>
       </div>
     </div>

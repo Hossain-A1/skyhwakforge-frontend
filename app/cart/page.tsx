@@ -67,7 +67,7 @@ const CartPage = () => {
   };
 
   return (
-    <main className='container sp mt-10 space-y-5 '>
+    <main className='container sp mt-10 space-y-5 min-h-screen'>
       <h2 className='text-2xl font-semibold uppercase text-center'>
         {" "}
         {cartItems?.length > 0
