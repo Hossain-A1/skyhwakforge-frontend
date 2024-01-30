@@ -1,19 +1,20 @@
 "use client";
 import Link from "next/link";
 import { GiDeliveryDrone } from "react-icons/gi";
-import { buttonVariants } from "./ui/Button";
+import Button, { buttonVariants } from "./ui/Button";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { CgMenu, CgClose } from "react-icons/cg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
+import { logout } from "@/redux/features/auth/authSlice";
 const Navber = () => {
   const pathName = usePathname();
   const [icon, setIcon] = useState<boolean>(false);
   const { cartItems } = useSelector((state: RootState) => state.cart);
   const { userAndToken } = useSelector((state: RootState) => state.auth);
-
+  const dispatch = useDispatch();
   const navContents = [
     { href: "/", label: "home" },
     { href: "/about-us", label: "about" },
@@ -39,7 +40,7 @@ const Navber = () => {
         >
           <div className='max-lg:relative max-lg:h-full max-lg:w-full'>
             <ul
-              className='lg:flex max-lg:flex-col  gap-10  items-center justify-center 
+              className='lg:flex max-lg:flex-col  gap-5  items-center justify-center 
             max-lg:absolute max-lg:bottom-0 max-lg:top-1/2 max-lg:-translate-y-1/2 max-lg:left-1/2 max-lg:-translate-x-1/2  uppercase max-lg:space-y-10'
             >
               {navContents.map((item) => (
@@ -57,6 +58,23 @@ const Navber = () => {
                   </Link>
                 </li>
               ))}
+              <div className=' flex items-end justify-end'>
+                {userAndToken?.user ? (
+                  <div className='flex justify-center items-center gap-5'>
+                    <p className='text-sm lowercase'>
+                      {userAndToken.user.email}
+                    </p>
+                    <Button onClick={() => dispatch(logout())}>Logout</Button>
+                  </div>
+                ) : (
+                  <Link
+                    href='/sign-up'
+                    className={cn(buttonVariants({ variant: "secondary" }))}
+                  >
+                    Sign up
+                  </Link>
+                )}
+              </div>
             </ul>
           </div>
         </div>
@@ -83,7 +101,7 @@ const Navber = () => {
             </div>
           </div>
 
-          <div className='max-lg:hidden'>
+          {/* <div className='max-lg:hidden'>
             {userAndToken?.user ? (
               <div>
                 <p>{userAndToken.user.email}</p>
@@ -96,7 +114,7 @@ const Navber = () => {
                 Sign up
               </Link>
             )}
-          </div>
+          </div> */}
 
           <div className='flex items-center max-md:mr-10'>
             <Link href='/cart'>

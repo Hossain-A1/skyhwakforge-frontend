@@ -18,7 +18,7 @@ const Galleries = () => {
             data-aos="zoom-in"   data-aos-duration='700'
           >
             <Link
-              href='/drones-page'
+              href={`/galleries/${gData._id}`}
               className='gallery-image w-full h-full relative'
             >
               <Image

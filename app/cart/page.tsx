@@ -71,13 +71,13 @@ const CartPage = () => {
       <h2 className='text-2xl font-semibold uppercase text-center'>
         {" "}
         {cartItems?.length > 0
-          ? ` you've added ${cartItems?.length}  product${
+          ? ` you've added ( ${cartItems?.length} )  product${
               cartItems?.length > 1 ? "s" : ""
             }`
           : "Cart is empty"}
       </h2>
 
-      <div className='grid grid-cols-7 text-center items-center gap-5 border-4 py-3 border-blue font-bold text-sm uppercase'>
+      <div className='max-lg:hidden grid grid-cols-7  text-center items-center gap-5 border-4 py-3 border-blue font-bold text-sm uppercase'>
         <h2>#id</h2>
         <h2 className='col-span-2 text-start'>Items</h2>
 
@@ -92,7 +92,7 @@ const CartPage = () => {
           ))}
 
         {/* checkout ui */}
-        <div className='grid grid-cols-2 gap-10 mt-20'>
+        <div className='grid lg:grid-cols-2 grid-cols-1 gap-10 mt-20'>
           <div>
             <Button onClick={() => dispatch(clearCart())} variant='primary'>
               Clear All Carts
@@ -104,12 +104,12 @@ const CartPage = () => {
               <button className='text-xl font-bold text-blue'>{total()}</button>
             </div>
 
-            <div className='flex justify-end items-center whitespace-normal '>
+            <div className='flex justify-end items-center whitespace-normal  '>
               <p>
                 Taxes are already added to the displayed price of our product.
               </p>
             </div>
-            <div className='flex justify-end gap-10 items-center'>
+            <div className='flex justify-center  lg:gap-10 gap-1  items-center '>
               <Link
                 href='/drones-page'
                 className={cn(buttonVariants({ variant: "deepLight" }))}
@@ -118,7 +118,9 @@ const CartPage = () => {
               </Link>
               <button
                 onClick={handlePayment}
-                className={cn(buttonVariants({ variant: "secondary" }))}
+                className={cn(
+                  buttonVariants({ variant: "secondary", size: "full" })
+                )}
               >
                 Checkout
               </button>

@@ -32,7 +32,7 @@ const Offers: React.FC<OffersProps> = ({ native }) => {
 
       {isLoading && <Loading isLoading={isLoading} />}
       {error && <Error error={error.message} />}
-      <div className='space-y-20 '>
+      <div className='space-y-20 w-full '>
         <Swiper
           pagination={{
             clickable: true,

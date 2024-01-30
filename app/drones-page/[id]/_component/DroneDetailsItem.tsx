@@ -12,6 +12,7 @@ import { RootState } from "@/redux/store";
 import { droneType } from "@/types/drone.type";
 import Image from "next/image";
 import Link from "next/link";
+
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -21,6 +22,7 @@ interface DroneDetailsItemProps {
 
 const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item }) => {
   const { cartItems } = useSelector((state: RootState) => state.cart);
+  
 
   const [isChangeImage, setIsChangeImage] = useState(item.images[0]);
   const [seeMore, setSeeMore] = useState<boolean>(false);
@@ -130,7 +132,25 @@ const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item }) => {
         <div className='space-y-5'>
           <h2 className='text-2xl font-semibold'>About the item:</h2>
 
-          <span className='text-xl text-light/70'>{item.about}</span>
+          <div className=''>
+            <div className=''>
+              <h2 className='text-xl text-light/70'>
+                {item.about.substring(0, 500)}
+              </h2>
+              <strong
+                className='text-xl  text-blue '
+                onClick={() => setSeeMore(!seeMore)}
+              >
+                {" "}
+                {!seeMore && "Read More...."}
+              </strong>
+            </div>
+            {seeMore && (
+              <h2 className='text-xl text-light/70'>
+                {item.about.substring(300, 2000)}
+              </h2>
+            )}
+          </div>
         </div>
         <div className='space-y-5'>
           <div className='w-full space-y-5 '>
@@ -229,6 +249,7 @@ const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item }) => {
           </div>
         </div>
       </div>
+  
     </section>
   );
 };

@@ -50,8 +50,9 @@ const SignUpForm = () => {
   );
 
   return (
-    <div className='lg:w-1/2 lg:translate-x-40 w-full'>
-      <div className='flex flex-col gap-10 w-full'>
+    <div className='lg:w-1/2 w-full  '>
+  
+  <div className='flex flex-col items-center gap-10 '>
         <div className='flex flex-col gap-1.5'>
           <h2 className='text-3xl '>Create an account</h2>
           <p className='text-light/50'>
@@ -61,9 +62,9 @@ const SignUpForm = () => {
 
         <form
           onSubmit={handleSubmit}
-          className='flex  flex-col gap-5 text-lg'
+          className='flex w-full flex-col gap-5 text-lg'
         >
-          <div className='flex flex-col items-start gap-1.5'>
+          <div className='flex w-full flex-col items-start gap-1.5'>
             <label htmlFor='name' className='cursor-pointer '>
               Name
             </label>
@@ -75,7 +76,7 @@ const SignUpForm = () => {
               type='text'
               id='name'
               placeholder='name'
-              className='eq lg:w-1/2  w-full  rounded-xl border border-gray bg-transparent px-5 py-3 outline-none focus:border-blue'
+              className='eq  w-full  rounded-xl border border-gray bg-transparent px-5 py-3 outline-none focus:border-blue'
             />
           </div>
           <div className='flex flex-col items-start gap-1.5'>
@@ -90,7 +91,7 @@ const SignUpForm = () => {
               type='email'
               id='email'
               placeholder='hello@example.com'
-              className='eq lg:w-1/2 w-full rounded-xl border border-gray bg-transparent px-5 py-3 outline-none focus:border-blue'
+              className='eq  w-full rounded-xl border border-gray bg-transparent px-5 py-3 outline-none focus:border-blue'
             />
           </div>
 
@@ -106,10 +107,10 @@ const SignUpForm = () => {
               type='password'
               id='password'
               placeholder='Write your password'
-              className='eq lg:w-1/2 w-full rounded-xl border border-gray bg-transparent px-5 py-3 outline-none focus:border-blue'
+              className='eq  w-full rounded-xl border border-gray bg-transparent px-5 py-3 outline-none focus:border-blue'
             />
           </div>
-          <div className="w-full lg:w-1/2">
+          <div className="w-full ">
           <Button variant='secondary' size='full'  type='submit' isLoading={loading}>
             Register
           </Button>
@@ -124,6 +125,7 @@ const SignUpForm = () => {
           </div>
         </form>
       </div>
+ 
     </div>
   );
 };

@@ -32,10 +32,8 @@ const Access = () => {
         <hr className='border border-blue/70 ' />
       </div>
 
-      <div className='bg-blue/30 w-full py-3 hover:bg-blue/40 eq'>
-        <Link href='/' className='text-center block text-light text-sm'>
-          Back to top
-        </Link>
+      <div >
+       
       </div>
     </div>
   );
