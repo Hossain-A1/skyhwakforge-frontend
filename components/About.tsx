@@ -132,6 +132,7 @@ const About = () => {
               ))
             : trainers.map((trainer: trainerType) => (
                 <div
+                key={trainer._id}
                   className='p-5 border flex flex-col items-center rounded-xl gap-2'
                   data-aos='zoom-in'
                   data-aos-duration='700'

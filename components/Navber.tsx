@@ -28,7 +28,7 @@ const Navber = () => {
     <header className='h-20 flex items-center fixed top-0 left-0 right-0 z-[999] bg-dark '>
       <div className='container flex justify-between items-center  '>
         <div>
-          <h2 className='text-blue text-2xl  font-semibold'>SkyHawkForge</h2>
+          <h2 className='text-blue text-xl  font-semibold'>SkyHawkForge</h2>
         </div>
 
         <div
@@ -40,7 +40,7 @@ const Navber = () => {
         >
           <div className='max-lg:relative max-lg:h-full max-lg:w-full'>
             <ul
-              className='lg:flex lg:justify-between lg:gap-10 max-lg:flex-col  gap-5  items-center justify-center text-center 
+              className='lg:flex lg:justify-between xl:gap-10 max-lg:flex-col  gap-5  items-center justify-center text-center 
             max-lg:absolute max-lg:bottom-0 max-lg:top-1/2 max-lg:-translate-y-1/2 max-lg:left-1/2 max-lg:-translate-x-1/2  uppercase max-lg:space-y-10  '
             >
               {navContents.map((item) => (
@@ -60,10 +60,10 @@ const Navber = () => {
                   </li>
                 </div>
               ))}
-              <div className='text-end xl:ml-14 max-lg:ml-0'>
+              <div className='text-end xl:ml-10 lg:ml-5'>
                 {userAndToken?.user ? (
-                  <div className='lg:flex flex-col justify-end items-center  gap-5'>
-                    <p className='text-sm lowercase'>
+                  <div className='flex max-md:flex-col justify-end items-center  gap-5'>
+                    <p  className='text-sm lowercase lg:hidden xl:block '>
                       {userAndToken.user.email}
                     </p>
                     <Button onClick={() => dispatch(logout())}>Logout</Button>

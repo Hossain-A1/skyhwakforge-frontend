@@ -29,10 +29,10 @@ const Hero = () => {
               </h1>
             </div>
             <p className='max-md:text-sm'>
-              "Discover a digital sanctuary at SkyHawkForge, where dreams take
+             {` "Discover a digital sanctuary at SkyHawkForge, where dreams take
               flight and ideas soar beyond the ordinary. Nourish your mind with
               a tapestry of curated wonders, from visionary artworks to
-              narratives that dance on the edge of reality."
+              narratives that dance on the edge of reality."`}
             </p>
             <div
               className='flex items-center gap-5 '

@@ -53,8 +53,8 @@ const CustomerReviews = () => {
             <div className='w-full'>
               <Review rate={item} />
               <strong className='text-justify text-sm'>
-                "Impressed with the durable build and smooth controls.
-                SkyhawkForge sets the standard for drone excellence."
+                {`Impressed with the durable build and smooth controls.
+                SkyhawkForge sets the standard for drone excellence.`}
               </strong>
             </div>
           </div>
@@ -90,8 +90,8 @@ const CustomerReviews = () => {
             <div className='w-full'>
               <Review rate={item} />
               <strong className='text-justify text-sm'>
-                "Couldn't be happier with my new SkyhawkForge drone. The
-                features are mind-blowing, and it's so much fun to fly!"
+                {`Couldn't be happier with my new SkyhawkForge drone. The
+                features are mind-blowing, and it's so much fun to fly!`}
               </strong>
             </div>
           </div>
@@ -127,8 +127,8 @@ const CustomerReviews = () => {
             <div className='w-full'>
               <Review rate={item} />
               <strong className='text-justify text-sm'>
-                "SkyhawkForge has won me over. The drone is sleek, powerful, and
-                the camera quality is exceptional."
+                {`"SkyhawkForge has won me over. The drone is sleek, powerful, and
+                the camera quality is exceptional."`}
               </strong>
             </div>
           </div>
@@ -172,8 +172,8 @@ const CustomerReviews = () => {
               <div className='w-full'>
                 <Review rate={item} />
                 <strong className='text-justify text-sm'>
-                  "Absolutely amazed by the performance and stability of my
-                  SkyhawkForge drone. Aerial views are breathtaking!"
+                  {`"Absolutely amazed by the performance and stability of my
+                  SkyhawkForge drone. Aerial views are breathtaking!"`}
                 </strong>
               </div>
             </div>
@@ -209,8 +209,8 @@ const CustomerReviews = () => {
               <div className='w-full'>
                 <Review rate={item} />
                 <strong className='text-justify text-sm'>
-                  "Sleek design, easy to fly, and stunning camera quality.
-                  SkyhawkForge drones are top-notch!"
+                  {`"Sleek design, easy to fly, and stunning camera quality.
+                  SkyhawkForge drones are top-notch!"`}
                 </strong>
               </div>
             </div>
@@ -246,8 +246,8 @@ const CustomerReviews = () => {
               <div className='w-full'>
                 <Review rate={item} />
                 <strong className='text-justify text-sm'>
-                  "Impressed with the durable build and smooth controls.
-                  SkyhawkForge sets the standard for drone excellence."
+                  {`  "Impressed with the durable build and smooth controls.
+                  SkyhawkForge sets the standard for drone excellence."`}
                 </strong>
               </div>
             </div>
@@ -283,8 +283,8 @@ const CustomerReviews = () => {
               <div className='w-full'>
                 <Review rate={item} />
                 <strong className='text-justify text-sm'>
-                  "The build quality of my SkyhawkForge drone is impressive.
-                  Solid purchase, and the aerial views are breathtaking."
+                  {`"The build quality of my SkyhawkForge drone is impressive.
+                  Solid purchase, and the aerial views are breathtaking."`}
                 </strong>
               </div>
             </div>
@@ -320,9 +320,9 @@ const CustomerReviews = () => {
               <div className='w-full'>
                 <Review rate={item} />
                 <strong className='text-justify text-sm'>
-                  "Just took my SkyhawkForge for its maiden flight. Smooth
+                  {` "Just took my SkyhawkForge for its maiden flight. Smooth
                   controls, stable hover, and the camera exceeded my
-                  expectations."
+                  expectations."`}
                 </strong>
               </div>
             </div>
@@ -358,8 +358,9 @@ const CustomerReviews = () => {
               <div className='w-full'>
                 <Review rate={item} />
                 <strong className='text-justify text-sm'>
-                  "SkyhawkForge drones are a game-changer. After the first
-                  flight, I'm convinced I made the right choice."
+                  {`  "SkyhawkForge drones are a game-changer. After the first
+                  flight, I'm convinced I made the right choice. lorem
+                  sd adjp amid d"`}
                 </strong>
               </div>
             </div>
@@ -395,9 +396,9 @@ const CustomerReviews = () => {
               <div className='w-full'>
                 <Review rate={item} />
                 <strong className='text-justify text-sm'>
-                  "SkyhawkForge's attention to detail is evident. The drone
+                  {`  "SkyhawkForge's attention to detail is evident. The drone
                   feels premium, and the flight experience is nothing short of
-                  amazing."
+                  amazing."`}
                 </strong>
               </div>
             </div>
@@ -433,8 +434,8 @@ const CustomerReviews = () => {
               <div className='w-full'>
                 <Review rate={item} />
                 <strong className='text-justify text-sm'>
-                  "The foldable design of the SkyhawkForge drone makes it easy
-                  to take on my travels. Compact and convenient!"
+                  {` "The foldable design of the SkyhawkForge drone makes it easy
+                  to take on my travels. Compact and convenient!"`}
                 </strong>
               </div>
             </div>
@@ -470,8 +471,8 @@ const CustomerReviews = () => {
               <div className='w-full'>
                 <Review rate={item} />
                 <strong className='text-justify text-sm'>
-                  "SkyhawkForge drones redefine what's possible. The intelligent
-                  flight modes add a whole new dimension to the experience."
+                  {`   "SkyhawkForge drones redefine what's possible. The intelligent
+                  flight modes add a whole new dimension to the experience."`}
                 </strong>
               </div>
             </div>

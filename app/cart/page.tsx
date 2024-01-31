@@ -10,6 +10,8 @@ import { cn } from "@/lib/utils";
 
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 // stripe payment
 const stripePromise = loadStripe(
@@ -17,11 +19,11 @@ const stripePromise = loadStripe(
 );
 
 const CartPage = () => {
+  const [loading, setLoading] = useState<boolean>(false);
   const { cartItems } = useSelector((state: RootState) => state.cart);
+  const  user  = useSelector((state: RootState) => state.auth.userAndToken?.user);
 
-  if (cartItems) {
-    console.log(cartItems);
-  }
+ 
 
   const dispatch = useDispatch();
   /* SUBTOTAL CALCULATION */
@@ -36,7 +38,12 @@ const CartPage = () => {
     return subtotal;
   };
 
+  const router = useRouter()
   const handlePayment = async () => {
+    if(!user){
+     return router.push('/sign-in')
+    }
+    setLoading(true)
     const stripe = await stripePromise;
 
     if (!stripe) {
@@ -116,14 +123,13 @@ const CartPage = () => {
               >
                 Back to Shopping
               </Link>
-              <button
+              <Button
                 onClick={handlePayment}
-                className={cn(
-                  buttonVariants({ variant: "secondary", size: "full" })
-                )}
+               variant='secondary' size='full' isLoading={loading}
               >
+            
                 Checkout
-              </button>
+              </Button>
             </div>
           </div>
         </div>
