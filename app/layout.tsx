@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Bai_Jamjuree } from "next/font/google";
 import "./globals.css";
@@ -7,7 +8,7 @@ import { Toaster } from "react-hot-toast";
 import ReduxProvider from "@/provider/ReduxProvider";
 import Footer from "@/components/Footer";
 
-const baiJamjuree = Bai_Jamjuree ({
+const baiJamjuree = Bai_Jamjuree({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700"],
 });
@@ -28,7 +29,7 @@ export default function RootLayout({
           <Toaster />
           <Navber />
           {children}
-          <Footer/>
+          <Footer />
         </ReduxProvider>
       </body>
     </html>

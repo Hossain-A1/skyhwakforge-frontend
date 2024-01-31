@@ -24,7 +24,7 @@ const GalleryInfo = ({ params }: { params: { id: string } }) => {
   }, [params.id, router]);
 
   return (
-    <main className='container sp mt-20'>
+    <main className='container sp mt-20 min-h-screen'>
       {isLoading && (
         <div className='min-h-screen flex items-center justify-center'>
           <Loading isLoading={isLoading} />

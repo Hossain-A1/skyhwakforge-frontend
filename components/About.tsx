@@ -44,7 +44,7 @@ const About = () => {
               creatively.
             </p>
 
-            <div className='flex  items-center   gap-5'>
+            <div className='flex  max-md:flex-col  items-center mt-5   gap-5'>
               <div className=' p-5  shadow-sm shadow-blue flex items-center justify-center h-full w-full'>
                 <span className='lg:text-2xl max-lg:text-sm text-light/70 font-bold uppercase text-center'>
                   22K+ sold
@@ -57,7 +57,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className=' right-side lg:flex max-lg:flex-col justify-between '>
+          <div className=' right-side flex max-lg:flex-col items-center justify-between '>
             <div className='about-drone-image  '>
               <Image
                 src='/images/about-drone.png'
@@ -69,7 +69,7 @@ const About = () => {
               />
             </div>
 
-            <div className='bg-blue/20 lg:w-[20rem] lg:h-[20rem] max-lg:w-[16rem] max-lg:h-[16rem] rounded-r-full rounded-t-full flex flex-col gap-5 justify-center items-center'>
+            <div className='bg-blue/20 lg:w-[20rem] lg:h-[20rem] max-lg:w-[18rem] max-lg:h-[18rem] rounded-r-full rounded-t-full flex flex-col gap-5 justify-center items-center'>
               <h3 className='text-sm text-light/40 capitalize underline underline-offset-2'>
                 camera features
               </h3>
@@ -94,6 +94,7 @@ const About = () => {
             ? trainers &&
               trainers.slice(0, 3).map((trainer: trainerType) => (
                 <div
+                key={trainer._id}
                   className='p-5 border flex flex-col items-center rounded-xl gap-2'
                   data-aos='zoom-in'
                   data-aos-duration='700'

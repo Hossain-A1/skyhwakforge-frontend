@@ -22,43 +22,6 @@ const CustomerReviews = () => {
       <section className='space-y-5'>
         <div className='grid lg:grid-cols-3 grid-cols-1 gap-5 items-center'>
           <div
-            className='w-full border-2 space-y-3 p-5  border-blue '
-            data-aos='zoom-in'
-            data-aos-duration='700'
-          >
-            <div className='flex gap-3 w-full'>
-              <div className=' rounded-full'>
-                <div className='  w-10 h-10'>
-                  <Image
-                    src='https://randomuser.me/api/portraits/men/79.jpg'
-                    alt='hero-drone'
-                    height={280}
-                    width={280}
-                    priority
-                    className='h-full w-full rounded-full object-cover  '
-                  />
-                </div>
-              </div>
-
-              <div className='w-full '>
-                <h2 className='flex items-center gap-2'>
-                  pekkka{" "}
-                  <b>
-                    <BsCheckCircleFill className='text-green-700 overflow-hidden rounded-full text-xs' />
-                  </b>
-                </h2>
-                <p className='text-xs'>a month ago</p>
-              </div>
-            </div>
-            <div className='w-full'>
-              <Review rate={item} />
-              <strong className='text-justify text-sm'>
-                "Absolutely amazed by the performance and stability of my
-                SkyhawkForge drone. Aerial views are breathtaking!"
-              </strong>
-            </div>
-          </div>
-          <div
             className='w-full  border-2 space-y-3 p-5  border-blue'
             data-aos='zoom-in'
             data-aos-duration='700'
@@ -67,7 +30,7 @@ const CustomerReviews = () => {
               <div className=' rounded-full'>
                 <div className='  w-10 h-10'>
                   <Image
-                    src='https://randomuser.me/api/portraits/women/85.jpg'
+                    src='https://randomuser.me/api/portraits/women/47.jpg'
                     alt='hero-drone'
                     height={280}
                     width={280}
@@ -79,44 +42,7 @@ const CustomerReviews = () => {
 
               <div className='w-full '>
                 <h2 className='flex items-center gap-2'>
-                  Sara{" "}
-                  <b>
-                    <BsCheckCircleFill className='text-green-700 overflow-hidden rounded-full text-xs' />
-                  </b>
-                </h2>
-                <p className='text-xs'>a week ago</p>
-              </div>
-            </div>
-            <div className='w-full'>
-              <Review rate={item} />
-              <strong className='text-justify text-sm'>
-                "Sleek design, easy to fly, and stunning camera quality.
-                SkyhawkForge drones are top-notch!"
-              </strong>
-            </div>
-          </div>
-          <div
-            className='w-full  border-2 space-y-3 p-5  border-blue'
-            data-aos='zoom-in'
-            data-aos-duration='700'
-          >
-            <div className='flex gap-3 w-full'>
-              <div className=' rounded-full'>
-                <div className='  w-10 h-10'>
-                  <Image
-                    src='https://randomuser.me/api/portraits/women/64.jpg'
-                    alt='hero-drone'
-                    height={280}
-                    width={280}
-                    priority
-                    className='h-full w-full rounded-full object-cover  '
-                  />
-                </div>
-              </div>
-
-              <div className='w-full '>
-                <h2 className='flex items-center gap-2'>
-                  Mira{" "}
+                  Asira jd{" "}
                   <b>
                     <BsCheckCircleFill className='text-green-700 overflow-hidden rounded-full text-xs' />
                   </b>
@@ -132,6 +58,80 @@ const CustomerReviews = () => {
               </strong>
             </div>
           </div>
+          <div
+            className='w-full  border-2 space-y-3 p-5  border-blue'
+            data-aos='zoom-in'
+            data-aos-duration='700'
+          >
+            <div className='flex gap-3 w-full'>
+              <div className=' rounded-full'>
+                <div className='  w-10 h-10'>
+                  <Image
+                    src='https://randomuser.me/api/portraits/lego/4.jpg'
+                    alt='hero-drone'
+                    height={280}
+                    width={280}
+                    priority
+                    className='h-full w-full rounded-full object-cover  '
+                  />
+                </div>
+              </div>
+
+              <div className='w-full '>
+                <h2 className='flex items-center gap-2'>
+                  user4765{" "}
+                  <b>
+                    <BsCheckCircleFill className='text-green-700 overflow-hidden rounded-full text-xs' />
+                  </b>
+                </h2>
+                <p className='text-xs'>a day ago</p>
+              </div>
+            </div>
+            <div className='w-full'>
+              <Review rate={item} />
+              <strong className='text-justify text-sm'>
+                "Couldn't be happier with my new SkyhawkForge drone. The
+                features are mind-blowing, and it's so much fun to fly!"
+              </strong>
+            </div>
+          </div>
+          <div
+            className='w-full  border-2 space-y-3 p-5  border-blue'
+            data-aos='zoom-in'
+            data-aos-duration='700'
+          >
+            <div className='flex gap-3 w-full'>
+              <div className=' rounded-full'>
+                <div className='  w-10 h-10'>
+                  <Image
+                    src='https://randomuser.me/api/portraits/men/14.jpg'
+                    alt='hero-drone'
+                    height={280}
+                    width={280}
+                    priority
+                    className='h-full w-full rounded-full object-cover  '
+                  />
+                </div>
+              </div>
+
+              <div className='w-full '>
+                <h2 className='flex items-center gap-2'>
+                  Smith{" "}
+                  <b>
+                    <BsCheckCircleFill className='text-green-700 overflow-hidden rounded-full text-xs' />
+                  </b>
+                </h2>
+                <p className='text-xs'>a week ago</p>
+              </div>
+            </div>
+            <div className='w-full'>
+              <Review rate={item} />
+              <strong className='text-justify text-sm'>
+                "SkyhawkForge has won me over. The drone is sleek, powerful, and
+                the camera quality is exceptional."
+              </strong>
+            </div>
+          </div>
         </div>
 
         {seeMore && (
@@ -141,7 +141,7 @@ const CustomerReviews = () => {
             data-aos-duration='700'
           >
             <div
-              className='w-full  border-2 space-y-3 p-5  border-blue'
+              className='w-full border-2 space-y-3 p-5  border-blue '
               data-aos='zoom-in'
               data-aos-duration='700'
             >
@@ -149,7 +149,7 @@ const CustomerReviews = () => {
                 <div className=' rounded-full'>
                   <div className='  w-10 h-10'>
                     <Image
-                      src='https://randomuser.me/api/portraits/women/47.jpg'
+                      src='https://randomuser.me/api/portraits/men/79.jpg'
                       alt='hero-drone'
                       height={280}
                       width={280}
@@ -161,7 +161,81 @@ const CustomerReviews = () => {
 
                 <div className='w-full '>
                   <h2 className='flex items-center gap-2'>
-                    Asira jd{" "}
+                    pekkka{" "}
+                    <b>
+                      <BsCheckCircleFill className='text-green-700 overflow-hidden rounded-full text-xs' />
+                    </b>
+                  </h2>
+                  <p className='text-xs'>a month ago</p>
+                </div>
+              </div>
+              <div className='w-full'>
+                <Review rate={item} />
+                <strong className='text-justify text-sm'>
+                  "Absolutely amazed by the performance and stability of my
+                  SkyhawkForge drone. Aerial views are breathtaking!"
+                </strong>
+              </div>
+            </div>
+            <div
+              className='w-full  border-2 space-y-3 p-5  border-blue'
+              data-aos='zoom-in'
+              data-aos-duration='700'
+            >
+              <div className='flex gap-3 w-full'>
+                <div className=' rounded-full'>
+                  <div className='  w-10 h-10'>
+                    <Image
+                      src='https://randomuser.me/api/portraits/women/85.jpg'
+                      alt='hero-drone'
+                      height={280}
+                      width={280}
+                      priority
+                      className='h-full w-full rounded-full object-cover  '
+                    />
+                  </div>
+                </div>
+
+                <div className='w-full '>
+                  <h2 className='flex items-center gap-2'>
+                    Sara{" "}
+                    <b>
+                      <BsCheckCircleFill className='text-green-700 overflow-hidden rounded-full text-xs' />
+                    </b>
+                  </h2>
+                  <p className='text-xs'>a week ago</p>
+                </div>
+              </div>
+              <div className='w-full'>
+                <Review rate={item} />
+                <strong className='text-justify text-sm'>
+                  "Sleek design, easy to fly, and stunning camera quality.
+                  SkyhawkForge drones are top-notch!"
+                </strong>
+              </div>
+            </div>
+            <div
+              className='w-full  border-2 space-y-3 p-5  border-blue'
+              data-aos='zoom-in'
+              data-aos-duration='700'
+            >
+              <div className='flex gap-3 w-full'>
+                <div className=' rounded-full'>
+                  <div className='  w-10 h-10'>
+                    <Image
+                      src='https://randomuser.me/api/portraits/women/64.jpg'
+                      alt='hero-drone'
+                      height={280}
+                      width={280}
+                      priority
+                      className='h-full w-full rounded-full object-cover  '
+                    />
+                  </div>
+                </div>
+
+                <div className='w-full '>
+                  <h2 className='flex items-center gap-2'>
+                    Mira{" "}
                     <b>
                       <BsCheckCircleFill className='text-green-700 overflow-hidden rounded-full text-xs' />
                     </b>
@@ -174,80 +248,6 @@ const CustomerReviews = () => {
                 <strong className='text-justify text-sm'>
                   "Impressed with the durable build and smooth controls.
                   SkyhawkForge sets the standard for drone excellence."
-                </strong>
-              </div>
-            </div>
-            <div
-              className='w-full  border-2 space-y-3 p-5  border-blue'
-              data-aos='zoom-in'
-              data-aos-duration='700'
-            >
-              <div className='flex gap-3 w-full'>
-                <div className=' rounded-full'>
-                  <div className='  w-10 h-10'>
-                    <Image
-                      src='https://randomuser.me/api/portraits/lego/4.jpg'
-                      alt='hero-drone'
-                      height={280}
-                      width={280}
-                      priority
-                      className='h-full w-full rounded-full object-cover  '
-                    />
-                  </div>
-                </div>
-
-                <div className='w-full '>
-                  <h2 className='flex items-center gap-2'>
-                    user4765{" "}
-                    <b>
-                      <BsCheckCircleFill className='text-green-700 overflow-hidden rounded-full text-xs' />
-                    </b>
-                  </h2>
-                  <p className='text-xs'>a day ago</p>
-                </div>
-              </div>
-              <div className='w-full'>
-                <Review rate={item} />
-                <strong className='text-justify text-sm'>
-                  "Couldn't be happier with my new SkyhawkForge drone. The
-                  features are mind-blowing, and it's so much fun to fly!"
-                </strong>
-              </div>
-            </div>
-            <div
-              className='w-full  border-2 space-y-3 p-5  border-blue'
-              data-aos='zoom-in'
-              data-aos-duration='700'
-            >
-              <div className='flex gap-3 w-full'>
-                <div className=' rounded-full'>
-                  <div className='  w-10 h-10'>
-                    <Image
-                      src='https://randomuser.me/api/portraits/men/14.jpg'
-                      alt='hero-drone'
-                      height={280}
-                      width={280}
-                      priority
-                      className='h-full w-full rounded-full object-cover  '
-                    />
-                  </div>
-                </div>
-
-                <div className='w-full '>
-                  <h2 className='flex items-center gap-2'>
-                    Smith{" "}
-                    <b>
-                      <BsCheckCircleFill className='text-green-700 overflow-hidden rounded-full text-xs' />
-                    </b>
-                  </h2>
-                  <p className='text-xs'>a week ago</p>
-                </div>
-              </div>
-              <div className='w-full'>
-                <Review rate={item} />
-                <strong className='text-justify text-sm'>
-                  "SkyhawkForge has won me over. The drone is sleek, powerful,
-                  and the camera quality is exceptional."
                 </strong>
               </div>
             </div>

@@ -11,7 +11,7 @@ const Support = () => {
         title='support'
         headline='We are ready to help you any moments.'
       />
-      <section className='grid lg:grid-cols-2 grid-cols-1 gap-5'>
+      <section className='grid lg:grid-cols-2 grid-cols-1 gap-5 lg:gap-10'>
         <div className='flex flex-col items-center h-full w-full'>
           <form className='h-full w-full xl:w-[24rem] space-y-5'>
             <div className='flex flex-col gap-2.5  w-full'>

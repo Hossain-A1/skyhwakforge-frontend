@@ -1,4 +1,4 @@
-"use client";
+
 import useSWR from "swr";
 
 const fetcher = async (url: string, token: string = "") => {

@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { Autoplay, Pagination, Navigation, Parallax } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import useFetch from "@/hooks/useFetch";
 import { droneType } from "@/types/drone.type";
 import Image from "next/image";
@@ -17,7 +17,7 @@ import { CurrencyFormatter } from "./shared/CurrencyFormatter";
 import Review from "./shared/Review";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import Button, { buttonVariants } from "./ui/Button";
+import  { buttonVariants } from "./ui/Button";
 
 interface OffersProps {
   native?: boolean;
