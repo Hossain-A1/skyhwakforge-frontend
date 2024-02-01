@@ -21,9 +21,7 @@ const stripePromise = loadStripe(
 const CartPage = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const { cartItems } = useSelector((state: RootState) => state.cart);
-  const  user  = useSelector((state: RootState) => state.auth.userAndToken?.user);
-
- 
+  const user = useSelector((state: RootState) => state.auth.userAndToken?.user);
 
   const dispatch = useDispatch();
   /* SUBTOTAL CALCULATION */
@@ -38,12 +36,12 @@ const CartPage = () => {
     return subtotal;
   };
 
-  const router = useRouter()
+  const router = useRouter();
   const handlePayment = async () => {
-    if(!user){
-     return router.push('/sign-in')
+    if (!user) {
+      return router.push("/sign-in");
     }
-    setLoading(true)
+    setLoading(true);
     const stripe = await stripePromise;
 
     if (!stripe) {
@@ -77,63 +75,83 @@ const CartPage = () => {
     <main className='container sp mt-10 space-y-5 min-h-screen'>
       <h2 className='text-2xl font-semibold uppercase text-center'>
         {" "}
-        {cartItems?.length > 0
-          ? ` you've added ( ${cartItems?.length} )  product${
-              cartItems?.length > 1 ? "s" : ""
-            }`
-          : "Cart is empty"}
-      </h2>
-
-      <div className='max-lg:hidden grid grid-cols-7  text-center items-center gap-5 border-4 py-3 border-blue font-bold text-sm uppercase'>
-        <h2>#id</h2>
-        <h2 className='col-span-2 text-start'>Items</h2>
-
-        <h2>Quantity</h2>
-        <h2>unit price</h2>
-        <h2>Total Price</h2>
-      </div>
-      <div className=' space-y-10'>
-        {cartItems &&
-          cartItems?.map((addedCart) => (
-            <CartItem key={addedCart._id} addedCart={addedCart} />
-          ))}
-
-        {/* checkout ui */}
-        <div className='grid lg:grid-cols-2 grid-cols-1 gap-10 mt-20'>
-          <div>
-            <Button onClick={() => dispatch(clearCart())} variant='primary'>
-              Clear All Carts
-            </Button>
-          </div>
-          <div className='space-y-5'>
-            <div className='flex justify-end gap-10 items-center'>
-              <h2 className='text-2xl font-semibold'>Subtotal ⇒</h2>
-              <button className='text-xl font-bold text-blue'>{total()}</button>
-            </div>
-
-            <div className='flex justify-end items-center whitespace-normal  '>
-              <p>
-                Taxes are already added to the displayed price of our product.
-              </p>
-            </div>
-            <div className='flex justify-center  lg:gap-10 gap-1  items-center '>
+        {cartItems?.length > 0 ? (
+          ` you've added ( ${cartItems?.length} )  product${
+            cartItems?.length > 1 ? "s" : ""
+          }`
+        ) : (
+          <h3 className='flex flex-col items-center gap-10'>
+            {"Cart is empty"}
+            <h4>
               <Link
                 href='/drones-page'
-                className={cn(buttonVariants({ variant: "deepLight" }))}
+                className={cn(buttonVariants({ variant: "outline" }))}
               >
-                Back to Shopping
+                Go to Shopping
               </Link>
-              <Button
-                onClick={handlePayment}
-               variant='secondary' size='full' isLoading={loading}
-              >
-            
-                Checkout
-              </Button>
+            </h4>
+          </h3>
+        )}
+      </h2>
+
+      {cartItems.length > 0 && (
+        <div>
+          <div className='max-lg:hidden grid grid-cols-7  text-center items-center gap-5 border-4 py-3 border-blue font-bold text-sm uppercase'>
+            <h2>#id</h2>
+            <h2 className='col-span-2 text-start'>Items</h2>
+
+            <h2>Quantity</h2>
+            <h2>unit price</h2>
+            <h2>Total Price</h2>
+          </div>
+          <div className=' space-y-10'>
+            {cartItems &&
+              cartItems?.map((addedCart) => (
+                <CartItem key={addedCart._id} addedCart={addedCart} />
+              ))}
+
+            {/* checkout ui */}
+            <div className='grid lg:grid-cols-2 grid-cols-1 gap-10 mt-20'>
+              <div>
+                <Button onClick={() => dispatch(clearCart())} variant='primary'>
+                  Clear All Carts
+                </Button>
+              </div>
+              <div className='space-y-5'>
+                <div className='flex justify-end gap-10 items-center'>
+                  <h2 className='text-2xl font-semibold'>Subtotal ⇒</h2>
+                  <button className='text-xl font-bold text-blue'>
+                    {total()}
+                  </button>
+                </div>
+
+                <div className='flex justify-end items-center whitespace-normal  '>
+                  <p>
+                    Taxes are already added to the displayed price of our
+                    product.
+                  </p>
+                </div>
+                <div className='flex justify-center  lg:gap-10 gap-1  items-center '>
+                  <Link
+                    href='/drones-page'
+                    className={cn(buttonVariants({ variant: "deepLight" }))}
+                  >
+                    Back to Shopping
+                  </Link>
+                  <Button
+                    onClick={handlePayment}
+                    variant='secondary'
+                    size='full'
+                    isLoading={loading}
+                  >
+                    Checkout
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </main>
   );
 };
