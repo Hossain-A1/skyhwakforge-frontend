@@ -22,7 +22,6 @@ interface DroneDetailsItemProps {
 
 const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item }) => {
   const { cartItems } = useSelector((state: RootState) => state.cart);
-  
 
   const [isChangeImage, setIsChangeImage] = useState(item.images[0]);
   const [seeMore, setSeeMore] = useState<boolean>(false);
@@ -249,7 +248,6 @@ const DroneDetailsItem: React.FC<DroneDetailsItemProps> = ({ item }) => {
           </div>
         </div>
       </div>
-  
     </section>
   );
 };

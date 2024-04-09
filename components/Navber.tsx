@@ -14,6 +14,10 @@ const Navber = () => {
   const [icon, setIcon] = useState<boolean>(false);
   const { cartItems } = useSelector((state: RootState) => state.cart);
   const { userAndToken } = useSelector((state: RootState) => state.auth);
+  const loginUser = localStorage.getItem('user');
+  const userAdd = loginUser ? JSON.parse(loginUser) : null;
+
+  const filteredCartItems = cartItems.filter(item => userAndToken?.user && userAdd && userAndToken.user.email === userAdd.email);
   const dispatch = useDispatch();
   const navContents = [
     { href: "/", label: "home" },
@@ -107,7 +111,7 @@ const Navber = () => {
             <Link href='/cart'>
               <GiDeliveryDrone className='text-2xl text-blue' />
             </Link>
-            <span>({cartItems?.length})</span>
+            <span>({filteredCartItems?.length})</span>
           </div>
         </div>
       </div>

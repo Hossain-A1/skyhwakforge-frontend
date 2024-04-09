@@ -22,6 +22,10 @@ const CartPage = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const { cartItems } = useSelector((state: RootState) => state.cart);
   const user = useSelector((state: RootState) => state.auth.userAndToken?.user);
+  const loginUser = localStorage.getItem("auth");
+  const userAdd = loginUser ? JSON.parse(loginUser) : null;
+
+  const filteredCartItems = cartItems.filter((item) =>user && user.email === userAdd?.email);
 
   const dispatch = useDispatch();
   /* SUBTOTAL CALCULATION */
@@ -73,14 +77,14 @@ const CartPage = () => {
 
   return (
     <main className='container sp mt-10 space-y-5 min-h-screen'>
-      <h2 className='text-2xl font-semibold uppercase text-center'>
+      <div className='text-2xl font-semibold uppercase text-center'>
         {" "}
-        {cartItems?.length > 0 ? (
-          ` you've added ( ${cartItems?.length} )  product${
-            cartItems?.length > 1 ? "s" : ""
+        {filteredCartItems?.length > 0 ? (
+          ` you've added ( ${filteredCartItems?.length} )  product${
+            filteredCartItems?.length > 1 ? "s" : ""
           }`
         ) : (
-          <h3 className='flex flex-col items-center gap-10'>
+          <div className='flex flex-col items-center gap-10'>
             {"Cart is empty"}
             <h4>
               <Link
@@ -90,11 +94,21 @@ const CartPage = () => {
                 Go to Shopping
               </Link>
             </h4>
-          </h3>
+            {!user && (
+              <h4>
+                <Link
+                  href='/sign-in'
+                  className={cn(buttonVariants({ variant: "secondary" }))}
+                >
+                  To view your cart, kindly LOGIN
+                </Link>
+              </h4>
+            )}
+          </div>
         )}
-      </h2>
+      </div>
 
-      {cartItems.length > 0 && (
+      {filteredCartItems.length > 0 && (
         <div>
           <div className='max-lg:hidden grid grid-cols-7  text-center items-center gap-5 border-4 py-3 border-blue font-bold text-sm uppercase'>
             <h2>#id</h2>
@@ -105,10 +119,9 @@ const CartPage = () => {
             <h2>Total Price</h2>
           </div>
           <div className=' space-y-10'>
-            {cartItems &&
-              cartItems?.map((addedCart) => (
-                <CartItem key={addedCart._id} addedCart={addedCart} />
-              ))}
+            {filteredCartItems.map((addedCart) => (
+              <CartItem key={addedCart._id} addedCart={addedCart} />
+            ))}
 
             {/* checkout ui */}
             <div className='grid lg:grid-cols-2 grid-cols-1 gap-10 mt-20'>

@@ -51,8 +51,7 @@ const SignUpForm = () => {
 
   return (
     <div className='lg:w-1/2 w-full  '>
-  
-  <div className='flex flex-col items-center gap-10 '>
+      <div className='flex flex-col items-center gap-10 '>
         <div className='flex flex-col gap-1.5'>
           <h2 className='text-3xl '>Create an account</h2>
           <p className='text-light/50'>
@@ -110,14 +109,18 @@ const SignUpForm = () => {
               className='eq  w-full rounded-xl border border-gray bg-transparent px-5 py-3 outline-none focus:border-blue'
             />
           </div>
-          <div className="w-full ">
-          <Button variant='secondary' size='full'  type='submit' isLoading={loading}>
-            Register
-          </Button>
+          <div className='w-full '>
+            <Button
+              variant='secondary'
+              size='full'
+              type='submit'
+              isLoading={loading}
+            >
+              Register
+            </Button>
           </div>
-        
 
-          <div className="w-full lg:w-1/2">
+          <div className='w-full lg:w-1/2'>
             <span className='text-light/50'>Already have an account?</span>{" "}
             <Link href='/sign-in' className='text-blue'>
               Login
@@ -125,7 +128,6 @@ const SignUpForm = () => {
           </div>
         </form>
       </div>
- 
     </div>
   );
 };
