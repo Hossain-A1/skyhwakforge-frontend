@@ -11,9 +11,10 @@ import { useState } from "react";
 
 const About = () => {
   const { data: trainers, error, isLoading } = useFetch("/api/trainers");
+  console.log(trainers);
   const [seeMore, setSeeMore] = useState<boolean>(false);
   return (
-    <section className='container sp   mt-20'>
+    <section className='container sp'>
       <div className='flex flex-col gap-10'>
         <div className='top-side'>
           <SectionTitle
@@ -94,7 +95,7 @@ const About = () => {
             ? trainers &&
               trainers.slice(0, 3).map((trainer: trainerType) => (
                 <div
-                key={trainer._id}
+                  key={trainer._id}
                   className='p-5 border flex flex-col items-center rounded-xl gap-2'
                   data-aos='zoom-in'
                   data-aos-duration='700'
@@ -132,7 +133,7 @@ const About = () => {
               ))
             : trainers.map((trainer: trainerType) => (
                 <div
-                key={trainer._id}
+                  key={trainer._id}
                   className='p-5 border flex flex-col items-center rounded-xl gap-2'
                   data-aos='zoom-in'
                   data-aos-duration='700'

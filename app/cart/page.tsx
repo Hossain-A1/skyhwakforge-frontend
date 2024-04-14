@@ -22,10 +22,6 @@ const CartPage = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const { cartItems } = useSelector((state: RootState) => state.cart);
   const user = useSelector((state: RootState) => state.auth.userAndToken?.user);
-  const loginUser = localStorage.getItem("auth");
-  const userAdd = loginUser ? JSON.parse(loginUser) : null;
-
-  const filteredCartItems = cartItems.filter((item) =>user && user.email === userAdd?.email);
 
   const dispatch = useDispatch();
   /* SUBTOTAL CALCULATION */
@@ -79,9 +75,9 @@ const CartPage = () => {
     <main className='container sp mt-10 space-y-5 min-h-screen'>
       <div className='text-2xl font-semibold uppercase text-center'>
         {" "}
-        {filteredCartItems?.length > 0 ? (
-          ` you've added ( ${filteredCartItems?.length} )  product${
-            filteredCartItems?.length > 1 ? "s" : ""
+        {cartItems?.length > 0 ? (
+          ` you've added ( ${cartItems?.length} )  product${
+            cartItems?.length > 1 ? "s" : ""
           }`
         ) : (
           <div className='flex flex-col items-center gap-10'>
@@ -108,7 +104,7 @@ const CartPage = () => {
         )}
       </div>
 
-      {filteredCartItems.length > 0 && (
+      {cartItems.length > 0 && (
         <div>
           <div className='max-lg:hidden grid grid-cols-7  text-center items-center gap-5 border-4 py-3 border-blue font-bold text-sm uppercase'>
             <h2>#id</h2>
@@ -119,7 +115,7 @@ const CartPage = () => {
             <h2>Total Price</h2>
           </div>
           <div className=' space-y-10'>
-            {filteredCartItems.map((addedCart) => (
+            {cartItems.map((addedCart) => (
               <CartItem key={addedCart._id} addedCart={addedCart} />
             ))}
 
